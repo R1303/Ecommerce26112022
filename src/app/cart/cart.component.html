@@ -1,0 +1,183 @@
+<br/>
+<div style="display: none; background-color: white; overflow: scroll;" id="SelectAddress" class="modal bs-example-modal-lg hide" data-backdrop = "static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modalClass modal-content">
+        <div class="modal-body-centered" style="color: black; margin-left: 5px;">
+			<div id="schedule" *ngFor="let address of addressArray" class=" product img-prod">
+				<span *ngIf="address.address_type!='null'" class="status">{{address.address_type}}</span>
+				<span><a target="_blank"><b>{{address.address_line_1}},</b></a></span> 
+				&nbsp;<span><a target="_blank">{{address.address_line_2}},</a></span> 
+				&nbsp;<span><a target="_blank">{{address.city}},</a></span><br/> 
+				&nbsp;<span><a target="_blank">{{address.state}},</a></span><br/>
+				&nbsp;<span><a target="_blank">{{address.pincode}}</a></span>
+				&nbsp;<span><div *ngIf="address.address_type=='null'"><button type="button" (click)="CheckBox_Checked(address.address_id);"  class="btn btn-success " style="width:fit-content;height:30px;" value="Default"><p style="font-size: 10px;">Set Default</p></button></div></span>
+			   <br>
+			</div>
+			<br>
+			<div class="modal-footer">
+				<div><button type="button" (click)="disMissMadal('SelectAddress')" class="btn btn-danger" style="width:fit-content;height:30px;"><p style="font-size: 10px;">Cancel</p></button></div>
+		   
+			</div>
+		</div>
+      </div>
+    </div>
+  </div>
+
+<div  *ngIf="showSpinner" style="height: 1000px; width: 200px;" >
+	<div class="wrapper">
+		<div class="overlay">
+		  <div class="spinner-wrapper">
+			<app-app-spinner></app-app-spinner>
+		  </div>
+		</div>
+	  </div>
+</div>
+<section class="ftco-cart" *ngIf="!showSpinner && isItemPresent">
+			<div class="container">
+				<div class="row">
+    			<div class="col-md-12">
+    				<div>
+	    				<table class="table" *ngIf="isPC && isItemPresent">
+						    <thead class="thead-primary">
+						      <tr class="text-center">
+						        <th>&nbsp;</th>
+						        <th>&nbsp;</th>
+						        <th>Product name</th>
+						        <th>Price</th>
+						        <th>Quantity</th>
+						        <th>Total</th>
+						      </tr>
+						    </thead>
+						    
+						    <tbody>
+						      <tr class="text-center" *ngFor="let product of productArray">
+						        <td class="product-remove" (click)= "deleteCartItem(product.id)"><a><span class="fa fa-remove"></span></a></td>
+						        
+						        <td class="image-prod"><div class="img"><img src="{{product.product_image1}}" class="img-fluid" alt="Network Error"></div></td>
+						        
+						        <td class="product-name">
+						        	<a><h3 style="color: blue;" routerLink="" (click)="navigateToSingleProduct(product.fk_product)">{{product.product_name}}</h3></a>
+						        </td>
+						        
+						        <td class="price">{{product.product_price}}</td>
+						        
+						        <td class="quantity">
+					          	<div class="input-group mb-3">
+											<span class="input-group-btn mr-2">
+												<!-- <button type="button" class="quantity-left-minus btn">
+													<i class="ion-ios-remove"></i>
+												</button> -->
+											</span><input type="text" name="quantity"
+												class="form-control input-number" max="5" disabled="disabled" value="{{product.quantity}}"> <span class="input-group-btn ml-2">
+												<!-- <button type="button" class="quantity-right-plus btn"
+													data-type="plus" data-field="">
+													<i class="ion-ios-add"></i>
+												</button> -->
+											</span>
+										</div>
+									</td>
+						        
+						        <td class="total"><p>{{product.total}}</p></td>
+						      </tr><!-- END TR-->
+                            </tbody>
+						  </table>
+              <div *ngIf="!isPC" class="">
+              <div *ngFor="let product of productArray">
+                <br/>
+                <div class="d-flex inlineDisplay cart-total">
+                 <span><div class="img image-prod"><img src="{{product.product_image1}}" class="img-fluid" 
+                  alt="Network Error" width="100px" height="100px"></div>
+                  </span>
+                  <span>
+                    <h3 style="color: blue;" routerLink="" (click)="navigateToSingleProduct(product.fk_product)">{{product.product_name}}</h3>
+                    <label><b>Price :  </b></label>{{product.product_price}}
+                    <label><b>Qnty. :  </b></label>{{product.quantity}}
+                    <label><b>Total. :  </b></label>{{product.total}}
+                  </span>
+                  <span><a (click)= "deleteCartItem(product.id)"><span class="fa fa-remove"></span></a></span>
+                </div>
+            </div>
+            </div>
+    			</div>
+    		</div>
+    		<div class="row justify-content-end" *ngIf="isItemPresent">
+    			<div class="col-lg-4 mt-5 cart-wrap">
+    				<div class="cart-total mb-3">
+    					<h3>Coupon Code</h3>
+    					<p>Enter your coupon code if you have one</p>
+  						
+	              <div class="form-group">
+	              	<label for="">Coupon code</label>
+	                <input type="text" class="form-control text-left px-3" placeholder="" [(ngModel)]="couponCode">
+	              </div>
+	            
+					</div>
+					<div class="alert alert-successs" *ngIf="isCouponApplied">Coupon Applied !!</div>
+					<div class="alert alert-warning" *ngIf="isNotValidCoupon">Not Valid Coupon !!</div>
+    				<p><a  class="btn btn-primary py-3 px-4" (click)="calculateCoupon();">Apply Coupon</a></p>
+    			</div>
+    			<div class="col-lg-4 mt-5 cart-wrap" *ngIf="!addressNotPresent">
+					<div class="cart-total mb-3">
+						<h3>Delivery Address</h3>
+						<p>Select Delivery Address</p>
+					<div class="form-group">
+								<span><a target="_blank"><b>{{line1}},</b></a></span> 
+								<span><a target="_blank">{{line2}},</a></span> 
+								<span><a target="_blank">{{city}},</a></span><br/> 
+								<span><a target="_blank">{{state}},</a></span><br/>
+								<span><a target="_blank">{{pincode}}</a></span>
+					</div>
+					</div>
+					 <div class="alert alert-warning" *ngIf="!checkAvailability()">Not available at this PinCode!! </div>
+					 <p><a *ngIf="isPC" (click)="allAddress();"  class="btn btn-primary py-3 px-4">Change Address</a></p>
+    				<p *ngIf="!isPC"><a (click)="showModal('SelectAddress');" class="btn btn-primary py-3 px-4">Change Address</a></p>
+				</div>
+				<div class="col-lg-4 mt-5 cart-wrap" *ngIf="addressNotPresent">
+					<div class="cart-total mb-3">
+						<h3>Delivery Address</h3>
+						<p>Add Delivery Address</p>
+					</div>
+    				<p><a (click)="addAddress();" class="btn btn-primary py-3 px-4">Add Address</a></p>
+				</div>
+    			<div class="col-lg-4 mt-5 cart-wrap">
+    				<div class="cart-total mb-3">
+    					<h3>Cart Totals</h3>
+    					<p class="d-flex">
+							<span>Subtotal</span>
+							<!-- <span> </span> -->
+    						<span>Rs. {{subTotal}}</span>
+    					</p>
+    					<p class="d-flex">
+							<span>Delivery</span>
+							<!-- <span>+</span> -->
+    						<span>Rs. {{deliveryCharges}}</span>
+    					</p>
+    					<p class="d-flex">
+							<span>Discount</span>
+							<!-- <span>-</span> -->
+							<span *ngIf="isCouponApplied" style="color: green;">Rs. {{couponAmount}} (10% off)</span>
+							<span *ngIf="!isCouponApplied">Rs. {{couponAmount}}</span>
+    					</p>
+    					<hr>
+    					<p class="d-flex total-price">
+							<span>Total</span>
+							<!-- <span> </span> -->
+							<span *ngIf="!isCouponApplied">Rs. {{totalAmount}}</span>
+							<span *ngIf="isCouponApplied" style="color: green;">Rs. {{totalAmount}}</span>
+						    <!-- <span *ngIf="isCouponApplied" style="color: green;">(10% off)</span> -->
+						</p>
+    				</div>
+    				<!-- <p><a href="#"  class="btn btn-primary py-3 px-4">Calculate</a></p> -->
+    				<p><a *ngIf="isAvailable" routerLink='' (click)="navigateToCheckOut();" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+    			</div>
+			</div>
+			
+			
+      </div>
+	  </div>
+	 
+	
+	</section>
+	<div *ngIf="!isItemPresent" style="height: 500px;">
+		<div class="alert alert-warning" style="width: 1000px;">Add Item In Cart !!<br><br><button (click)="shop();"  class="btn btn-success">Shop Now</button></div>
+	</div>

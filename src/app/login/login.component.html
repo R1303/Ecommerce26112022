@@ -1,0 +1,57 @@
+<br>
+<!-- <div class="container" *ngIf="showProgress" style="height: 200px; width: 200px;" >
+    <circle-progress
+    [percent]="100"
+    [radius]="100"
+    [outerStrokeWidth]="16"
+    [innerStrokeWidth]="8"
+    [outerStrokeColor]="'#78C000'"
+    [innerStrokeColor]="'#C7E596'"
+    [animation]="true"
+    [animationDuration]="8000"
+    ></circle-progress>
+</div> -->
+<div  *ngIf="showSpinner" style="height: 1000px; width: 200px;" >
+	<div class="wrapper">
+		<div class="overlay">
+		  <div class="spinner-wrapper">
+			<app-app-spinner></app-app-spinner>
+		  </div>
+		</div>
+	  </div>
+</div>
+<div>
+<br>
+<br>
+<div class="container" style="height: 500px;">
+    <div class="alert alert-warning" *ngIf="invalidLogin">{{errorMsg}}</div>
+    <form action (submit)=handleJWTBasicAuthLogin() *ngIf="!doNotShowLoginForm">
+        <div class="container register-form">
+            <div class="form">
+                <div class="no">
+                    <p style="align-content: center; font-size: 25px">Login</p>
+                </div>
+
+                <div class="form-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Enter Email *" name="username"
+                                    [(ngModel)]="username"><br>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Enter Password *"
+                                    name="password" [(ngModel)]="password">
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" name="" value="Submit" style="width: 70px;" class="btnSubmit">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+<br/>

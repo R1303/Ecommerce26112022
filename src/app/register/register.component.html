@@ -1,0 +1,81 @@
+<br>
+<br>
+<!-- <div class="container" *ngIf="showRegister" style="height: 200px; width: 200px;" >
+    <circle-progress
+    [percent]="100"
+    [radius]="100"
+    [outerStrokeWidth]="16"
+    [innerStrokeWidth]="8"
+    [outerStrokeColor]="'#78C000'"
+    [innerStrokeColor]="'#C7E596'"
+    [animation]="true"
+    [animationDuration]="8000"
+    ></circle-progress>
+</div> -->
+<div  *ngIf="showSpinner" style="height: 1000px; width: 200px;" >
+	<div class="wrapper">
+		<div class="overlay">
+		  <div class="spinner-wrapper">
+			<app-app-spinner></app-app-spinner>
+		  </div>
+		</div>
+	  </div>
+</div>
+<div class="alert alert-success" *ngIf="(showRegisterPopup && isValid) && isResponse">SuccessFully Registered....... !!<br><br><a routerLink="/main">Go To Home</a>.</div> 
+<div class="registerform" *ngIf="!showRegister&&!isValid&&!showForm">
+<form  (ngSubmit)="!todoForm.invalid && saveTodo()" #todoForm="ngForm" name="todoForm" >
+ <div class="container register-form">
+          <div class="form">
+              <div class="no">
+                  <p style="align-content: center; font-size: 25px">Register</p>
+              </div>
+
+              <div class="form-content">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Enter Name *" name="userName" [(ngModel)]="userName" required>
+                              <span style="color:red" *ngIf="todoForm.dirty && todoForm.invalid">
+                                <span>     Username is required.*</span>
+                                </span>
+                            </div>
+                            <span style="color:red" *ngIf="todoForm.dirty && todoForm.invalid">
+                                <br>
+                            </span>
+                         
+                          <div class="form-group">
+                              <input type="email" class="form-control" placeholder="Enter Email *" name="userEmail" [(ngModel)]="userEmail" ngModel [email]="true" required>
+                              <span style="color:red" *ngIf="todoForm.dirty && todoForm.invalid">
+                                <span>     Enter Valid Email.*</span>
+                                </span>
+                            </div>
+                           
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Enter Password *" id="userPassword" name="userPassword" [(ngModel)]="userPassword" pattern="(?=.*\d)(?=.*[a-z]).{8,}" 
+                               title="Must contain at least one number and one letter, and at least 8 or more characters" required>
+                               <span style="color:red" *ngIf="todoForm.dirty && todoForm.invalid">
+                                <span>Enter valid Password (one number and one letter,and 8 or more characters required*)</span>
+                                </span>
+                            </div>
+                          
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Enter Phone No. *" name="phone" [(ngModel)]="userPhoneNumber"  pattern="(?=.*\d)(?=.*[0-9]).{10,}" maxlength="10" title="Enter valid Phone No." required>
+                              <span style="color:red" *ngIf="todoForm.dirty && todoForm.invalid">
+                                <span>     Enter Valid Phone No.*</span>
+                                </span>
+                            </div>
+                          
+                      </div>
+                  </div>
+                 <input type="submit" name="" value="Submit" style="width: 70px;" class="btnSubmit">
+              </div>
+          </div>
+      </div>
+      </form>
+      </div>
+      <div style="height: 1000px; width: 200px;" *ngIf="(showRegisterPopup && !isValid) && isResponse">
+      <div class="alert alert-warning" style="
+      width: 1000px;">{{errorMsg}}<br><br><button (click)= 'refresh()' class="btn btn-success">Register Here</button></div>
+      </div>

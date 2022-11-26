@@ -1,0 +1,35 @@
+
+    .tablink {
+     background-color: #d4d4d4;
+    }
+    
+  .tablink_1 {
+  height: 100%;
+  width: 33%;
+  float:left;
+  text-align: center;
+   }
+   
+    .tablink_2 {
+   height: 100%;
+   width: 34%;
+   text-align: center;
+   }
+   
+   .tablink_3 {
+  height: 100%;
+  width: 33%;
+  float:right;
+  text-align: center;
+   }
+   
+   .tabcontent {
+  color: Black;
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+   
+ .selected {
+  background: grey;
+} 

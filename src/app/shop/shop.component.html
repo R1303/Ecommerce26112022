@@ -1,0 +1,144 @@
+<div *ngIf="showSpinner">
+  <div class="wrapper">
+    <div class="overlay">
+      <div class="spinner-wrapper">
+        <app-app-spinner></app-app-spinner>
+      </div>
+    </div>
+  </div>
+</div>
+ <br/> 
+ 
+<section   *ngIf="!isPC && showScreen" style="height: 1000px;">
+  <div class="container">
+    <div class="row">
+      <div class="list-inline">
+        <div class="list-inline-item" *ngFor="let products of productArray">
+          <br/>  
+          <div style="width:150px; height: 150px; margin-right: 15px;">
+                <div class="card h-100 product">
+                  <!-- <a href="#"><img width="100%"  class="card-img-top" src={{products.productImage2}} alt=""></a> -->
+                  <a (click)="navigateToSingleProduct(products.id);"  class="card-img-top img-prod">
+                    <img class="img-fluid img-responsive" src={{products.productImage1}} alt="Network Error" width="250px" height="250px" >
+      
+                    <span class="status">{{products.category}}</span>
+                    <div class="overlay"></div>
+                  </a>
+                  <div class="card-body">
+                    <!-- <h4 class="card-title">
+                      <a href="#">{{products.productName}}</a>
+                    </h4>
+                    <h5>{{products.productName}}</h5>
+                    <p class="card-text">{{products.productName}}</p> -->
+                    <div class="text py-3 pb-4 px-3 text-center">
+                      <h3><a (click)="navigateToSingleProduct(products.id);" style="text-transform: capitalize;" >{{products.productName.substring(0,7)}}<span *ngIf="products.productName.length>7">....</span></a></h3>
+                      <div>
+                        <div class="pricing">
+                          <p class="price"><span style="display: inline-block;" class="mr-2 price-dc">Rs.{{(products.productPrice*120)/100}}/kg</span>
+                            <br><span class="price-sale">Rs. {{products.productPrice}}/kg</span></p>
+                        </div>
+                      </div>
+                      <div class="bottom-area d-flex px-3">
+                        <div class="m-auto d-flex">
+                          <a  (click)="navigateToSingleProduct(products.id);" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                            <span><i class="fa fa-bars"></i></span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            </div>
+            </div>
+     
+      <!-- <div *ngFor="let products of productArray">
+        <span class="ml-2 badge badge-pill badge-primary"> {{products.productName}} </span>
+        <div class="col-lg-4 col-md-6 list-inline-item">
+          <div class="product">
+  
+            <a href="#" class="img-prod">
+              <img class="img-fluid" src={{products.productImage2}} alt="Network Error">
+
+              <span class="status">{{products.category}}</span>
+              <div class="overlay"></div>
+            </a>
+            <div class="text py-3 pb-4 px-3 text-center">
+              <h3><a href="#"></a></h3>
+              <div class="d-flex">
+                <div class="pricing">
+                  <p class="price"><span class="mr-2 price-dc">INR 100</span><span
+                      class="price-sale">{{products.productPrice}}</span></p>
+                </div>
+              </div>
+              <div class="bottom-area d-flex px-3">
+                <div class="m-auto d-flex">
+                  <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                    <span><i class="fa fa-bars"></i></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <!-- <div class="row mt-5">
+      <div class="col text-center">
+        <div class="block-27">
+          <ul>
+            <li><a href="#">&lt;</a></li>
+            <li class="active"><span>1</span></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">&gt;</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</section>
+
+ <section *ngIf="isPC && showScreen">
+  <div class="container">
+    <div class="row">
+      <div class="list-inline">
+        <div class="col-lg-4 col-md-6 list-inline-item" *ngFor="let products of productArray">
+          <br/>  
+          <div style="width:180px; height: 180px; margin-right: 35px;margin-top: 25px; border: black;">
+                <div class="card h-100 product">
+                  <a (click)="navigateToSingleProduct(products.id);"  class="card-img-top img-prod">
+                    <img class="img-fluid img-responsive" src={{products.productImage1}} alt="Network Error" width="250px" height="250px" >
+                    <span class="status">{{products.category}}</span>
+                    <div class="overlay"></div>
+                  </a>
+                  <div class="card-body">
+                    <div class="text py-3 pb-4 px-3 text-center">
+                      <h3><a (click)="navigateToSingleProduct(products.id);" style="text-transform: capitalize;" >{{products.productName.substring(0,7)}}<span *ngIf="products.productName.length>7">....</span></a></h3>
+                      <div class="d-flex">
+                        <div class="pricing">
+                          <p class="price"><span style="display: inline-block;" class="mr-2 price-dc">Rs. {{(products.productPrice*120)/100}}/kg</span>
+                            <br><span class="price-sale">Rs. {{products.productPrice}}/kg</span></p>
+                        </div>
+                      </div>
+                      <div class="bottom-area d-flex px-3">
+                        <div class="m-auto d-flex">
+                          <a  (click)="navigateToSingleProduct(products.id);" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                            <span><i class="fa fa-bars"></i></span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+          </div>
+    
+</section> 
+<br/>
+<br/>

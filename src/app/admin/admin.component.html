@@ -1,0 +1,179 @@
+<hr>
+	<ul class="nav nav-tabs">
+		<li class="tablink_1"><a class="tablink" id="defaultOpen"
+			data-toggle="tab" href="#"
+			(click)="openPage('myProf', this, 'grey')">All Orders</a></li>
+		<li class="tablink_2"><a class="tablink" data-toggle="tab"
+			href="#" (click)="openPage('curOrder', this, 'grey')">Product List</a></li>
+		<li class="tablink_3"><a class="tablink" data-toggle="tab"
+			href="#" (click)="openPage('myOrder', this, 'grey')">
+				Configuration</a></li>
+	</ul>
+   
+	<div id="updateStatus" class="modal bs-example-modal-lg hide" data-backdrop = "static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+		  <div class="modal-content">
+			<div class="modal-header PopUpModalHeader"  style="background-color:#82ae46;">
+			<h4 class="modal-title">
+			<span>Change Status</span>
+				</h4>
+			  <button type="button" class="close closeModal modalHeaderClose" data-dismiss="modal" (click)="disMissMadal('updateStatus')">&times;</button>
+			</div>
+			<div class="modal-body">
+			  <p *ngIf="isPC" class="inlineDisplay lebelText">
+				<label><b>Status</b></label>&emsp;&emsp;
+					<select class="form-control" id="category" name="category" [(ngModel)]="status">
+						 <option>Confirm</option>
+						 <option>Shipped</option>
+						 <option>OnRoute</option>
+						 <option>Delivered</option>
+					</select>
+				&emsp; &emsp;<button type="button" class="updateMail" (click)="updateStatus()" style="outline-color: white;">OK</button>
+			  </p>
+			  <p *ngIf="!isPC">
+				<label><b>Status</b></label>&emsp;&emsp;
+				<select class="form-control" id="category" name="category" [(ngModel)]="status">
+					<option>Confirmed</option>
+					<option>Shipped</option>
+					<option>OnRoute</option>
+					<option>Delivered</option>
+			    </select>
+			   &emsp;&emsp; &emsp; &emsp; &emsp; <br/><br/>
+			  <button type="button" class="updateMail" (click)="updateStatus()" style="outline-color: white;">OK</button>
+			  </p>
+			  <p>
+			  </p>
+			</div>
+		  </div>
+		</div>
+	</div>
+
+	<div id="myProf" class="tabcontent" style="margin-left: 25px">
+		<div class="productdetail" style="margin-top: 5px;">	
+			<section>
+			<div class="container break-text">
+			<div class="row">
+		  <div class="col-md-12">
+			<div class="cart-list">		
+			<table class="table" id="table">
+			<thead class="thead-primary">
+			<tr class="text-center">
+			<th><p><b>Primary Key</b></p></th>
+			<th><p ><b>Order Date</b></p></th>
+			<th><p ><b>Name</b></p></th>
+			<th><p ><b>Price</b></p></th>
+			<th><p ><b>Images</b></p></th>
+			<th><p><b>Order Status</b></p></th>
+			<th><p><b>Change Status</b></p></th>
+			</tr>
+			</thead>
+			<tbody>
+		   
+				<tr class="text-center" *ngFor="let order of orderArray">
+				<td>{{order.id}}</td>	
+				<td><a>{{order.orderedDate}}</a></td>	
+				<TD>{{order.productName}}</TD>
+				<td>{{order.productPrice}}</td>
+			   <td> <a ><img alt="Error" src="{{order.productImage1}}" height="70px"  width="70px" /></a></td>
+				   <!-- <td> <a><img alt="Error" src="{{products.productImage2}}" height="70px" width="70px" /></a></td>
+				  <td> <a><img alt="Error"src="{{products.productImage3}}" height="70px"  width="70px" /></a></td>   -->
+				<td><span class="label success">{{order.status}}</span></td>
+				<td>
+					<button (click)="showChangeModel(order)">Change</button>
+					</td>
+				</tr>		     
+				 </tbody>
+		   
+		</table>
+	  
+			</div>
+			</div>
+			</div>
+			</div>
+			</section>
+			</div>
+	</div>
+					
+        
+	<div id="curOrder" class="tabcontent">
+	    <div class="productdetail" style="margin-top: 5px;">	
+		<section>
+		<div class="container break-text">
+		<div class="col-md-12">
+		<a routerLink='/addProduct'  id="myHref" style="font-size: 25px"><i class="fa fa-plus"  style="font-size:25px; color: blue"></i> Add Products</a>	
+		</div>
+		<div class="row">
+	  <div class="col-md-12">
+		<div class="cart-list">		
+		<table class="table" id="table">
+		<thead class="thead-primary">
+		<tr class="text-center">
+		<th><p><b>Primary Key</b></p></th>
+		<th><p ><b>Name</b></p></th>
+		<th><p ><b>Price</b></p></th>
+		<th><p ><b>Description</b></p></th>
+		<th colspan="3"><p ><b>Images</b></p></th>
+		<th><p><b>Action</b></p></th>
+		</tr>
+		</thead>
+		<tbody>
+      
+			<tr class="text-center" *ngFor="let products of productArray">
+			<td>{{products.id}}</td>	
+			<TD>{{products.productName}}</TD>
+			<td>{{products.productPrice}}</td>
+			<td id="desc">{{products.description}}</td>
+           <td> <a ><img alt="Error" src="{{products.productImage1}}" height="70px"  width="70px" /></a></td>
+		       <td> <a><img alt="Error" src="{{products.productImage2}}" height="70px" width="70px" /></a></td>
+		      <td> <a><img alt="Error"src="{{products.productImage3}}" height="70px"  width="70px" /></a></td>  
+						<td>
+					    <a><i (click)="deleteProduct(products.id);" class="fa fa-trash" aria-hidden="true" style="font-size:32px; color: red"></i></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a><i  class="fa fa-pencil" aria-hidden="true" style="font-size: 32px; color: #6698b7;"></i></a>
+            </td>
+					    </tr>		     
+             </tbody>
+       
+    </table>
+  
+		</div>
+		</div>
+        </div>
+        </div>
+        </section>
+        </div>
+			</div>
+	
+	
+	<div id="myOrder" class="tabcontent">
+	<section>
+	<input  type="button" id="setup_save" class="btn btn-primary" value="Save" style="margin-left: 120px;margin-top: 15px"/>
+	<br><br>
+		<form  id="setup_form">
+		<div class="container break-text">
+	    <div class="row">
+	    <div class="col-md-12 ftco-animate">
+		<div class="cart-list">
+		<table class="table" id="table">
+		<thead class="thead-primary">
+		<tr class="text-center">
+		<th><p style="margin-left: 35%;"><b>Primary Key</b></p></th>
+		<th><p style="margin-left: 40%;"><b>Flag Name</b></p></th>
+		<th><p style="margin-left: 40%;"><b>Value</b></p></th>
+		</tr>
+		</thead>
+		<tr class="text-center">
+		<td><input type="text"  name = "primary_key1" style="border: none;width: 10px" disabled="disabled" value= ""/></td>
+		<td><input type="text" name = "flag_name1"style="border: none;" disabled="disabled"  value  =  ""/></td>
+		<td><input  type="text" name = "flag_value" style="border: none; margin-left: 35%" value = ""/></td>
+	    <input  style="display: none;" type="text"  name = "primary_key" style="border: none; width: 10px" value= ""/>
+	    <input  style="display: none;" type="text"  name = "flag_name" style="border: none; width: 10px" value= ""/>
+		</tr>
+		</table>
+		</div>
+		</div>
+		</div>
+		</div>
+		<input style="display: none;" type="text" name="action" value="add"/>
+		</form>
+		</section>
+	</div>

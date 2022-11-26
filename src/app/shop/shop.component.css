@@ -1,0 +1,387 @@
+
+#MyProfileTab{
+	width: 100%;
+}
+#userDetail {
+	width: 35%;
+	height:35em;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    margin: 1.5%;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+#userDetail:hover{
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+#userProfile{
+	margin-left:7%;
+}
+#userName{
+	margin-top:7%;
+	font-size:18px;
+	color: #97d1f5;
+    font-style: inherit;
+    word-break: break-word;
+}
+#generalInfo p{
+    margin: 1% 0 1% 0;
+}
+#generalInfo label{
+	margin-bottom: -3%;
+}
+#MyProfileTab{
+	width: 100%;
+}
+#linkDetail{
+	width: 60%;
+	padding: 10px;
+	border-radius: 12px;
+	margin:1.5%;
+	overflow:auto;
+}
+#linkDetailMobile{
+	width: 100%;
+	padding: 10px;
+	border-radius: 12px;
+	margin:1.5%;
+	overflow:auto;
+}
+.linkTab{
+	background-color: #f7f7f7;
+    height: 29%;
+    width: 92%;
+    margin: 0% 0 4% 7%;
+    border-radius: 17px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.linkTabMobile{
+	background-color: #f7f7f7;
+    height: 100%;
+    width: 100%;
+    margin: 0% 0 4% 7%;
+    border-radius: 17px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.linkTab:hover{
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.moduleImage{
+	width: 88px;
+    height: 88px;
+    margin-left: -36%;
+    margin-top: 20%;
+    border-radius: 15%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.moduleImage:hover{
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.appName{
+	width: auto;
+    height: 50px;
+    margin-left: -5%;
+    margin-top: 17%;
+}
+.iosSpan{
+	float: left; 
+	width: 18%;
+	padding: 6% 0 0 1%;
+}
+.iosImage{
+    height: 33px;
+    width: 106px;
+}
+.androidSpan{
+	float: left; 
+	width: 15%;
+	padding: 6% 0 0 3%;
+}
+.androidImage{
+	height: 33px;
+    width: 105px;
+}
+.youtubeSpan{
+	float: left; 
+	width: 18%;
+	padding: 5.5% 0 0 3%;
+}
+.youtubeImage{
+	height: 27px;
+    width: 42px;
+}
+.youtubetext{
+    font-weight: bold;
+}
+.level{
+	margin-left: 8%;
+	margin-top: -11%;
+}
+.altametrics{
+    font-size: 14px;
+}
+.schedule{
+    font-size: 30px;
+    line-height: 30px;
+    color: #ea0000;
+}
+.inventory{
+    font-size: 30px;
+    line-height: 30px;
+	color: #9988da;
+}
+.dar{
+    font-size: 30px;
+    line-height: 30px;
+	color: #6f5050;
+}
+.alertField{
+	font-size: 15px;
+    color: red;
+    font-style: italic;
+}
+#updateEmail, #addEmail{
+	top:20% ! important;
+	border-radius: 7px;
+}
+#deleteEmail{
+	top:30% ! important;
+	border-radius: 7px;
+}
+
+.PopUpModalHeader {
+    background-color: #f5f5f5;
+    border-radius: 10px 10px 0 0;
+}
+.error{
+    font-family: inherit;
+    font-size: 12px;
+    color: orangered;
+}
+.updateMail{
+	height: 32px;
+	width: 104px;
+    border: none;
+    border-radius: 22px;
+    background-color: #21984b ! important;
+    font-family: sans-serif;
+    font-size: 12px;
+    outline-color: white;
+}
+.lebelText{
+	font-family: sans-serif;
+    font-size: 13px;
+    text-align: center;
+    color: #a09494;
+}
+#updateEmail label,#updateEmail label{
+	font-family: sans-serif;
+    font-size: 13px;
+    color: #a09494;
+    margin-top: 1%;
+}
+.updateMail:hover {
+    background-color: #21984b ! important;
+}
+.notes{
+    color: red;
+}
+.closeImage{
+    height: 20px;
+    width: 20px;
+}
+#confirm-dialog .pull-right{
+	margin-top: 37px;
+}
+.deleteConfirmation{
+	color:#5a5a63;
+	font-size:14px !important
+}
+.deleteNotes{
+	color:#5a5a63;
+	font-size:12px !important
+}
+.deleteMailBtn{
+	margin-left: 71%;
+    line-height: 4px;
+    margin-top: 0%;
+}
+.deleteMail{
+	height: 32px;
+	width: 85px;
+    border: none;
+    border-radius: 22px;
+    font-family: sans-serif;
+    font-size: 12px;
+    outline-color: white;
+}
+#deleteEmail {
+	width: 42%;
+	margin-left: -21%;
+}
+
+.alertInBox{
+	border-radius: 5px ! important;
+	border:#FF0000 1px solid ! important;
+}
+.closeModal{
+	color: black ! important;
+	opacity: 1 ! important;;
+    background-color: transparent!important;
+}
+.closeModal:hover {
+         background: transparent!important;
+ }
+ @-moz-document url-prefix() {
+   #deleteEmail .modal-body{
+  		height: 115px;
+  }
+ }
+ 
+ #deleteMobile{
+	top:30% ! important;
+	border-radius: 7px;
+}
+
+ #deleteMobile {
+	width: 42%;
+	margin-left: -21%;
+}
+
+
+
+#addMobile{
+	top:30% ! important;
+	border-radius: 7px;
+}
+
+ #addMobile {
+	width: 42%;
+	margin-left: -21%;
+}
+
+
+.profile-img-container {
+    position: relative;
+    display: inline-block; 
+    overflow: hidden; 
+    margin-top:7%;
+	font-size:20px;
+	color: #97d1f5;
+    font-style: inherit;
+    word-break: break-word;
+}
+.generalInfoEmail{
+    word-break: break-word;
+}
+
+.profile-img-container img:hover {
+    opacity: 1.5;
+}
+
+.profile-img-container:hover a {
+    opacity: 4; 
+    top: 0; 
+    z-index: 500;
+}
+
+.profile-img-container:hover a span {
+    top: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.fa-camera { 
+	position: absolute; 
+	bottom:0; 
+	right:0;
+	
+}
+
+.profile-img-container a {
+    display: block;
+    position: absolute;
+    top: -100%;
+    opacity: 4;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: inherit;
+}
+.centered-and-cropped { 
+	object-fit: cover ;
+	height: 100px !important;
+}
+#userDetail {
+	width: 35%;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    margin: 1.5%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#userDetailMobile {
+    padding: 4px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    margin: 1%;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+#userDetail:hover{
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+#userProfile{
+	margin-left:7%;
+}
+#userName{
+	margin-top:7%;
+	font-size:18px;
+	color: #97d1f5;
+    font-style: inherit;
+    word-break: break-word;
+}
+.genInfo{
+	font-size: 25px;
+}
+#generalInfo hr{
+	margin: 0 7% 2% 0;
+	border-top: 3px solid #eee;
+}
+.marginTop{
+	 margin-top: 6%;
+}
+.inlineDisplay{
+	display: inline-flex;
+	word-break: break-word;
+}
+#generalInfo p{
+    margin: 1% 0 1% 0;
+}
+#generalInfo label{
+	margin-bottom: -3%;
+}
+.topbar{
+	color: black;
+	padding-left: 20px;
+	padding-top: 0px;
+	font-size: 19px;
+}
+.list-inline {
+    margin-left: 0px; 
+    
+}
+.list-inline-item:not(:last-child) {
+     margin-right: 0px; 
+}
+
+.img-fluid{
+height: 200px;
+width: 100%;
+}

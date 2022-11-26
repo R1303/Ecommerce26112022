@@ -1,0 +1,24 @@
+<app-menu></app-menu>
+<div style="height:1000px; width: 200px;" *ngIf="showSpinner">
+<!-- <circle-progress
+[percent]="100"
+[radius]="100"
+[outerStrokeWidth]="16"
+[innerStrokeWidth]="8"
+[outerStrokeColor]="'#78C000'"
+[innerStrokeColor]="'#C7E596'"
+[animation]="true"
+[animationDuration]="2000"
+></circle-progress> -->
+<div class="wrapper">
+  <div class="overlay" *ngIf="showSpinner">
+    <div class="spinner-wrapper">
+      <app-app-spinner></app-app-spinner>
+    </div>
+  </div>
+</div>
+</div>
+<div class="container" *ngIf="showPage" id="detail">
+    <router-outlet (activate)="resetPosition($event);"></router-outlet>
+</div>
+<app-footer></app-footer>
