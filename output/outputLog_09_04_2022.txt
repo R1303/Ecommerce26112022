@@ -1,0 +1,43 @@
+2022-04-09 11:40:57.731  INFO 1864 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/authenticate', POST], []
+2022-04-09 11:40:57.731  INFO 1864 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**', OPTIONS], []
+2022-04-09 11:40:57.731  INFO 1864 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/', GET], []
+2022-04-09 11:40:57.732  INFO 1864 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/allProduct/{key}/**/**'], []
+2022-04-09 11:40:57.732  INFO 1864 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage1/**/**'], []
+2022-04-09 11:40:57.733  INFO 1864 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage2/**/**'], []
+2022-04-09 11:40:57.733  INFO 1864 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage3/**/**'], []
+2022-04-09 11:40:57.733  INFO 1864 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/upload/**/**'], []
+2022-04-09 11:40:57.733  INFO 1864 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/getProductById/{id}/**/**'], []
+2022-04-09 11:40:57.733  INFO 1864 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/getProductByCategory/{category}/**/**'], []
+2022-04-09 11:40:57.733  INFO 1864 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/setData/**/**'], []
+2022-04-09 11:40:57.795  INFO 1864 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ebe0cff, org.springframework.security.web.context.SecurityContextPersistenceFilter@59357f33, org.springframework.security.web.header.HeaderWriterFilter@7e8c49e5, org.springframework.security.web.authentication.logout.LogoutFilter@7bd00362, com.rajan.ecommerce9.jwt.JwtTokenAuthorizationOncePerRequestFilter@2519397b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@49bc4ccf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51825300, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c6b677b, org.springframework.security.web.session.SessionManagementFilter@324473c2, org.springframework.security.web.access.ExceptionTranslationFilter@544ca637, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@db7ff85]
+2022-04-09 11:40:57.889 DEBUG 1864 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2022-04-09 11:40:58.270  INFO 1864 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-09 11:40:58.285 DEBUG 1864 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-04-09 11:40:58.357  WARN 1864 --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-09 11:40:58.428 DEBUG 1864 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 38 mappings in 'requestMappingHandlerMapping'
+2022-04-09 11:40:58.453 DEBUG 1864 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-04-09 11:40:58.471 DEBUG 1864 --- [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-04-09 11:40:58.511  INFO 1864 --- [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2022-04-09 11:40:59.188  INFO 1864 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-04-09 11:40:59.192  INFO 1864 --- [  restartedMain] com.rajan.ecommerce9.Application         : Started Application in 10.448 seconds (JVM running for 11.106)
+Total Time Taken for Connection to Firebase :- 214 ms
+2022-04-09 11:49:14.449  INFO 1864 --- [nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-09 11:49:14.450  INFO 1864 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-09 11:49:14.450 DEBUG 1864 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-04-09 11:49:14.473 DEBUG 1864 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-04-09 11:49:14.473  INFO 1864 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 23 ms
+2022-04-09 11:49:14.508  WARN 1864 --- [nio-8082-exec-1] wtTokenAuthorizationOncePerRequestFilter : JWT_TOKEN_DOES_NOT_START_WITH_BEARER_STRING
+2022-04-09 11:49:14.512 DEBUG 1864 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/allProduct/dvdf", parameters={}
+2022-04-09 11:49:14.545 DEBUG 1864 --- [nio-8082-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String com.rajan.ecommerce9.rest.configuration.DeviceRestController.getProduct(java.lang.String,javax.servlet.http.HttpServletRequest)
+null
+Hibernate: select product0_.id as id1_3_, product0_.category as category2_3_, product0_.description as descript3_3_, product0_.product_image1 as product_4_3_, product0_.product_image2 as product_5_3_, product0_.product_image3 as product_6_3_, product0_.product_name as product_7_3_, product0_.product_price as product_8_3_ from product_detail product0_
+2022-04-09 11:49:14.977 DEBUG 1864 --- [nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2022-04-09 11:49:14.977 DEBUG 1864 --- [nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing ["[{"id":3,"productName":"Almonds","productPrice":900.0,"description":"Almonds","category":"Dry Fruit (truncated)...]
+2022-04-09 11:49:14.988 DEBUG 1864 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-09 11:49:15.109  WARN 1864 --- [nio-8082-exec-8] wtTokenAuthorizationOncePerRequestFilter : JWT_TOKEN_DOES_NOT_START_WITH_BEARER_STRING
+2022-04-09 11:49:15.157 DEBUG 1864 --- [nio-8082-exec-8] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-04-09 11:49:15.162 DEBUG 1864 --- [nio-8082-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2022-04-09 11:49:15.180 DEBUG 1864 --- [nio-8082-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-04-09 11:49:15.180 DEBUG 1864 --- [nio-8082-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Sat Apr 09 11:49:15 IST 2022, status=401, error=Unauthorized, message=You would need to p (truncated)...]
+2022-04-09 11:49:15.231 DEBUG 1864 --- [nio-8082-exec-8] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 401
+2022-04-09 21:36:25.946  WARN 1864 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h19m2s473ms443µs100ns).

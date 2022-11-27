@@ -1,0 +1,35 @@
+2021-05-09 17:05:35.062  INFO 24352 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/authenticate', POST], []
+2021-05-09 17:05:35.062  INFO 24352 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**', OPTIONS], []
+2021-05-09 17:05:35.062  INFO 24352 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/', GET], []
+2021-05-09 17:05:35.062  INFO 24352 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/allProduct/{key}/**/**'], []
+2021-05-09 17:05:35.062  INFO 24352 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage1/**/**'], []
+2021-05-09 17:05:35.063  INFO 24352 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage2/**/**'], []
+2021-05-09 17:05:35.063  INFO 24352 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage3/**/**'], []
+2021-05-09 17:05:35.063  INFO 24352 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/upload/**/**'], []
+2021-05-09 17:05:35.063  INFO 24352 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/getProductById/{id}/**/**'], []
+2021-05-09 17:05:35.063  INFO 24352 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/getProductByCategory/{category}/**/**'], []
+2021-05-09 17:05:35.063  INFO 24352 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/setData/**/**'], []
+2021-05-09 17:05:35.097  INFO 24352 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b2c7591, org.springframework.security.web.context.SecurityContextPersistenceFilter@12410def, org.springframework.security.web.header.HeaderWriterFilter@5cbd1bfa, org.springframework.security.web.authentication.logout.LogoutFilter@49eea61f, com.rajan.ecommerce9.jwt.JwtTokenAuthorizationOncePerRequestFilter@30c0d17b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c4c8d83, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@24877834, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62d857d8, org.springframework.security.web.session.SessionManagementFilter@7ba0fc22, org.springframework.security.web.access.ExceptionTranslationFilter@4b66ee65, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3dd74b60]
+2021-05-09 17:05:35.167 DEBUG 24352 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2021-05-09 17:05:35.373  INFO 24352 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-09 17:05:35.383 DEBUG 24352 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-05-09 17:05:35.434  WARN 24352 --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-09 17:05:35.485 DEBUG 24352 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 38 mappings in 'requestMappingHandlerMapping'
+2021-05-09 17:05:35.501 DEBUG 24352 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-05-09 17:05:35.509 DEBUG 24352 --- [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-05-09 17:05:35.542  INFO 24352 --- [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2021-05-09 17:05:35.786  INFO 24352 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-09 17:05:35.788  INFO 24352 --- [  restartedMain] com.rajan.ecommerce9.Application         : Started Application in 7.288 seconds (JVM running for 7.888)
+Total Time Taken for Connection to Firebase :- 100
+2021-05-09 17:06:01.457  INFO 24352 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-09 17:06:01.457  INFO 24352 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-09 17:06:01.457 DEBUG 24352 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2021-05-09 17:06:01.469 DEBUG 24352 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-05-09 17:06:01.470  INFO 24352 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2021-05-09 17:06:01.509  WARN 24352 --- [nio-8080-exec-1] wtTokenAuthorizationOncePerRequestFilter : JWT_TOKEN_DOES_NOT_START_WITH_BEARER_STRING
+2021-05-09 17:06:01.517 DEBUG 24352 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/allProduct/sdvsdvdsv", parameters={}
+2021-05-09 17:06:01.542 DEBUG 24352 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String com.rajan.ecommerce9.rest.configuration.DeviceRestController.getProduct(java.lang.String,javax.servlet.http.HttpServletRequest)
+null
+2021-05-09 17:06:01.619 DEBUG 24352 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2021-05-09 17:06:01.620 DEBUG 24352 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [""Unknown Request 404""]
+2021-05-09 17:06:01.631 DEBUG 24352 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

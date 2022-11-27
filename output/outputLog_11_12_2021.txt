@@ -1,0 +1,57 @@
+2021-12-11 14:05:12.055  INFO 18724 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/authenticate', POST], []
+2021-12-11 14:05:12.056  INFO 18724 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**', OPTIONS], []
+2021-12-11 14:05:12.056  INFO 18724 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/', GET], []
+2021-12-11 14:05:12.056  INFO 18724 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/allProduct/{key}/**/**'], []
+2021-12-11 14:05:12.056  INFO 18724 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage1/**/**'], []
+2021-12-11 14:05:12.057  INFO 18724 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage2/**/**'], []
+2021-12-11 14:05:12.057  INFO 18724 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage3/**/**'], []
+2021-12-11 14:05:12.057  INFO 18724 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/upload/**/**'], []
+2021-12-11 14:05:12.057  INFO 18724 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/getProductById/{id}/**/**'], []
+2021-12-11 14:05:12.057  INFO 18724 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/getProductByCategory/{category}/**/**'], []
+2021-12-11 14:05:12.057  INFO 18724 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/setData/**/**'], []
+2021-12-11 14:05:12.108  INFO 18724 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b69c5fb, org.springframework.security.web.context.SecurityContextPersistenceFilter@69dcd825, org.springframework.security.web.header.HeaderWriterFilter@5b3aaf39, org.springframework.security.web.authentication.logout.LogoutFilter@61d58a49, com.rajan.ecommerce9.jwt.JwtTokenAuthorizationOncePerRequestFilter@98a8a3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24a1a23e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@73d786b9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6949d0f9, org.springframework.security.web.session.SessionManagementFilter@4a4f7088, org.springframework.security.web.access.ExceptionTranslationFilter@2817d42c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@639fd92d]
+2021-12-11 14:05:12.205 DEBUG 18724 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2021-12-11 14:05:12.449  INFO 18724 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-11 14:05:12.468 DEBUG 18724 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-12-11 14:05:12.545  WARN 18724 --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-11 14:05:12.616 DEBUG 18724 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 38 mappings in 'requestMappingHandlerMapping'
+2021-12-11 14:05:12.637 DEBUG 18724 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-12-11 14:05:12.661 DEBUG 18724 --- [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-12-11 14:05:12.690  INFO 18724 --- [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2021-12-11 14:05:13.000  INFO 18724 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-11 14:05:13.002  INFO 18724 --- [  restartedMain] com.rajan.ecommerce9.Application         : Started Application in 10.345 seconds (JVM running for 11.254)
+Total Time Taken for Connection to Firebase :- 270
+2021-12-11 14:05:29.710  INFO 18724 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-11 14:05:29.710  INFO 18724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-11 14:05:29.710 DEBUG 18724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2021-12-11 14:05:29.735 DEBUG 18724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-12-11 14:05:29.743  INFO 18724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 25 ms
+2021-12-11 14:05:29.791  WARN 18724 --- [nio-8080-exec-1] wtTokenAuthorizationOncePerRequestFilter : JWT_TOKEN_DOES_NOT_START_WITH_BEARER_STRING
+2021-12-11 14:05:29.791 DEBUG 18724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2021-12-11 14:05:29.847 DEBUG 18724 --- [nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8]
+2021-12-11 14:05:29.847 DEBUG 18724 --- [nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2021-12-11 14:05:29.856 DEBUG 18724 --- [nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2021-12-11 14:05:29.864 DEBUG 18724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2021-12-11 14:05:29.873 DEBUG 18724 --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2021-12-11 14:05:29.913 DEBUG 18724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2021-12-11 14:05:29.921 DEBUG 18724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-12-11 14:05:30.008  WARN 18724 --- [nio-8080-exec-2] wtTokenAuthorizationOncePerRequestFilter : JWT_TOKEN_DOES_NOT_START_WITH_BEARER_STRING
+2021-12-11 14:05:30.040 DEBUG 18724 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2021-12-11 14:05:30.048 DEBUG 18724 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2021-12-11 14:05:30.105 DEBUG 18724 --- [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-12-11 14:05:30.120 DEBUG 18724 --- [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Sat Dec 11 14:05:30 IST 2021, status=401, error=Unauthorized, message=You would need to p (truncated)...]
+2021-12-11 14:05:30.200 DEBUG 18724 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 401
+2021-12-11 14:06:14.576  WARN 18724 --- [nio-8080-exec-3] wtTokenAuthorizationOncePerRequestFilter : JWT_TOKEN_DOES_NOT_START_WITH_BEARER_STRING
+2021-12-11 14:06:14.577 DEBUG 18724 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/allProduct/sdgs", parameters={}
+2021-12-11 14:06:14.580 DEBUG 18724 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String com.rajan.ecommerce9.rest.configuration.DeviceRestController.getProduct(java.lang.String,javax.servlet.http.HttpServletRequest)
+null
+Hibernate: select product0_.id as id1_3_, product0_.category as category2_3_, product0_.description as descript3_3_, product0_.product_image1 as product_4_3_, product0_.product_image2 as product_5_3_, product0_.product_image3 as product_6_3_, product0_.product_name as product_7_3_, product0_.product_price as product_8_3_ from product_detail product0_
+2021-12-11 14:06:15.187 DEBUG 18724 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2021-12-11 14:06:15.195 DEBUG 18724 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing ["[{"id":3,"productName":"Almonds","productPrice":900.0,"description":"Almonds","category":"Dry Fruit (truncated)...]
+2021-12-11 14:06:15.195 DEBUG 18724 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-12-11 14:06:15.243  WARN 18724 --- [nio-8080-exec-4] wtTokenAuthorizationOncePerRequestFilter : JWT_TOKEN_DOES_NOT_START_WITH_BEARER_STRING
+2021-12-11 14:06:15.249 DEBUG 18724 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2021-12-11 14:06:15.252 DEBUG 18724 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2021-12-11 14:06:15.254 DEBUG 18724 --- [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-12-11 14:06:15.254 DEBUG 18724 --- [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Sat Dec 11 14:06:15 IST 2021, status=401, error=Unauthorized, message=You would need to p (truncated)...]
+2021-12-11 14:06:15.259 DEBUG 18724 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 401

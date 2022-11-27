@@ -1,0 +1,23 @@
+2022-07-07 18:52:53.400  INFO 15120 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/authenticate', POST], []
+2022-07-07 18:52:53.400  INFO 15120 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**', OPTIONS], []
+2022-07-07 18:52:53.400  INFO 15120 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/', GET], []
+2022-07-07 18:52:53.400  INFO 15120 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/allProduct/{key}/**/**'], []
+2022-07-07 18:52:53.400  INFO 15120 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage1/**/**'], []
+2022-07-07 18:52:53.400  INFO 15120 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage2/**/**'], []
+2022-07-07 18:52:53.400  INFO 15120 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage3/**/**'], []
+2022-07-07 18:52:53.400  INFO 15120 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/upload/**/**'], []
+2022-07-07 18:52:53.400  INFO 15120 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/getProductById/{id}/**/**'], []
+2022-07-07 18:52:53.400  INFO 15120 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/getProductByCategory/{category}/**/**'], []
+2022-07-07 18:52:53.400  INFO 15120 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/setData/**/**'], []
+2022-07-07 18:52:53.431  INFO 15120 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7dd383f9, org.springframework.security.web.context.SecurityContextPersistenceFilter@3119bb49, org.springframework.security.web.header.HeaderWriterFilter@334087e, org.springframework.security.web.authentication.logout.LogoutFilter@744aa869, com.rajan.ecommerce9.jwt.JwtTokenAuthorizationOncePerRequestFilter@49d88a15, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1da7c7e2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e70e6cc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7232118a, org.springframework.security.web.session.SessionManagementFilter@47624133, org.springframework.security.web.access.ExceptionTranslationFilter@29e726f9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2bb7b456]
+2022-07-07 18:52:53.510 DEBUG 15120 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2022-07-07 18:52:53.901  INFO 15120 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-07 18:52:53.917 DEBUG 15120 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-07-07 18:52:53.980  WARN 15120 --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-07 18:52:54.058 DEBUG 15120 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 38 mappings in 'requestMappingHandlerMapping'
+2022-07-07 18:52:54.074 DEBUG 15120 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-07-07 18:52:54.091 DEBUG 15120 --- [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-07-07 18:52:54.122  INFO 15120 --- [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2022-07-07 18:52:54.407  INFO 15120 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-07-07 18:52:54.407  INFO 15120 --- [  restartedMain] com.rajan.ecommerce9.Application         : Started Application in 13.142 seconds (JVM running for 14.161)
+Total Time Taken for Connection to Firebase :- 143 ms

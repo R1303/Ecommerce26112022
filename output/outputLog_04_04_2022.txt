@@ -1,0 +1,203 @@
+2022-04-04 11:05:12.226  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/authenticate', POST], []
+2022-04-04 11:05:12.226  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**', OPTIONS], []
+2022-04-04 11:05:12.226  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/', GET], []
+2022-04-04 11:05:12.226  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/allProduct/{key}/**/**'], []
+2022-04-04 11:05:12.226  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage1/**/**'], []
+2022-04-04 11:05:12.227  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage2/**/**'], []
+2022-04-04 11:05:12.227  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage3/**/**'], []
+2022-04-04 11:05:12.227  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/upload/**/**'], []
+2022-04-04 11:05:12.227  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/getProductById/{id}/**/**'], []
+2022-04-04 11:05:12.227  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/getProductByCategory/{category}/**/**'], []
+2022-04-04 11:05:12.227  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/setData/**/**'], []
+2022-04-04 11:05:12.264  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@503b8988, org.springframework.security.web.context.SecurityContextPersistenceFilter@350d6b6d, org.springframework.security.web.header.HeaderWriterFilter@3b6eabf4, org.springframework.security.web.authentication.logout.LogoutFilter@3d274541, com.rajan.ecommerce9.jwt.JwtTokenAuthorizationOncePerRequestFilter@43acfbb1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e99593f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61f7bd3e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2dc62621, org.springframework.security.web.session.SessionManagementFilter@763e4e4d, org.springframework.security.web.access.ExceptionTranslationFilter@18df9d1a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@325558e6]
+2022-04-04 11:05:12.347 DEBUG 16372 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2022-04-04 11:05:12.557  INFO 16372 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-04 11:05:12.568 DEBUG 16372 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-04-04 11:05:12.620  WARN 16372 --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-04 11:05:12.666 DEBUG 16372 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 38 mappings in 'requestMappingHandlerMapping'
+2022-04-04 11:05:12.681 DEBUG 16372 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-04-04 11:05:12.690 DEBUG 16372 --- [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-04-04 11:05:12.715  INFO 16372 --- [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2022-04-04 11:05:12.967  INFO 16372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-04-04 11:05:12.970  INFO 16372 --- [  restartedMain] com.rajan.ecommerce9.Application         : Started Application in 7.617 seconds (JVM running for 8.253)
+Total Time Taken for Connection to Firebase :- 139
+2022-04-04 11:07:10.097  INFO 16372 --- [nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-04 11:07:10.097  INFO 16372 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-04 11:07:10.097 DEBUG 16372 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-04-04 11:07:10.105 DEBUG 16372 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-04-04 11:07:10.105  INFO 16372 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2022-04-04 11:07:10.120  WARN 16372 --- [nio-8082-exec-1] wtTokenAuthorizationOncePerRequestFilter : JWT_TOKEN_DOES_NOT_START_WITH_BEARER_STRING
+2022-04-04 11:07:10.122 DEBUG 16372 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/allProduct/dvdf", parameters={}
+2022-04-04 11:07:10.140 DEBUG 16372 --- [nio-8082-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String com.rajan.ecommerce9.rest.configuration.DeviceRestController.getProduct(java.lang.String,javax.servlet.http.HttpServletRequest)
+null
+Hibernate: select product0_.id as id1_3_, product0_.category as category2_3_, product0_.description as descript3_3_, product0_.product_image1 as product_4_3_, product0_.product_image2 as product_5_3_, product0_.product_image3 as product_6_3_, product0_.product_name as product_7_3_, product0_.product_price as product_8_3_ from product_detail product0_
+2022-04-04 11:07:10.431 DEBUG 16372 --- [nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2022-04-04 11:07:10.431 DEBUG 16372 --- [nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing ["[{"id":3,"productName":"Almonds","productPrice":900.0,"description":"Almonds","category":"Dry Fruit (truncated)...]
+2022-04-04 11:07:10.443 DEBUG 16372 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-04 11:07:10.539  WARN 16372 --- [nio-8082-exec-2] wtTokenAuthorizationOncePerRequestFilter : JWT_TOKEN_DOES_NOT_START_WITH_BEARER_STRING
+2022-04-04 11:07:10.561 DEBUG 16372 --- [nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-04-04 11:07:10.565 DEBUG 16372 --- [nio-8082-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2022-04-04 11:07:10.583 DEBUG 16372 --- [nio-8082-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-04-04 11:07:10.583 DEBUG 16372 --- [nio-8082-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Mon Apr 04 11:07:10 IST 2022, status=401, error=Unauthorized, message=You would need to p (truncated)...]
+2022-04-04 11:07:10.634 DEBUG 16372 --- [nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 401
+2022-04-04 11:11:47.393  INFO 16372 --- [       Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-04-04 11:11:47.394  INFO 16372 --- [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-04 11:11:47.397  INFO 16372 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-04 11:11:47.410  INFO 16372 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.4.RELEASE)
+
+2022-04-04 11:11:47.769  INFO 16372 --- [  restartedMain] com.rajan.ecommerce9.Application         : Starting Application on DESKTOP-00U4LSQ with PID 16372 (D:\Workspace\ecommerce.14092019\target\classes started by DELL in D:\Workspace\ecommerce.14092019)
+2022-04-04 11:11:47.770  INFO 16372 --- [  restartedMain] com.rajan.ecommerce9.Application         : No active profile set, falling back to default profiles: default
+2022-04-04 11:11:48.125  INFO 16372 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-04-04 11:11:48.130  INFO 16372 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 repository interfaces.
+2022-04-04 11:11:48.254  INFO 16372 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c9e6bdb0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 11:11:48.374  INFO 16372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-04 11:11:48.375  INFO 16372 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-04 11:11:48.376  INFO 16372 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2022-04-04 11:11:48.457  INFO 16372 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-04 11:11:48.458  INFO 16372 --- [  restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 685 ms
+2022-04-04 11:11:48.727  WARN 16372 --- [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'inMemoryDatabaseShutdownExecutor' defined in class path resource [org/springframework/boot/devtools/autoconfigure/DevToolsDataSourceAutoConfiguration.class]: Unsatisfied dependency expressed through method 'inMemoryDatabaseShutdownExecutor' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2022-04-04 11:11:48.728  INFO 16372 --- [  restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-04-04 11:11:48.784  INFO 16372 --- [  restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-04-04 11:11:48.788 ERROR 16372 --- [  restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.4.RELEASE)
+
+2022-04-04 11:11:50.762  INFO 16372 --- [  restartedMain] com.rajan.ecommerce9.Application         : Starting Application on DESKTOP-00U4LSQ with PID 16372 (D:\Workspace\ecommerce.14092019\target\classes started by DELL in D:\Workspace\ecommerce.14092019)
+2022-04-04 11:11:50.765  INFO 16372 --- [  restartedMain] com.rajan.ecommerce9.Application         : No active profile set, falling back to default profiles: default
+2022-04-04 11:11:51.270  INFO 16372 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-04-04 11:11:51.307  INFO 16372 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36ms. Found 6 repository interfaces.
+2022-04-04 11:11:51.410  INFO 16372 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c9e6bdb0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 11:11:51.414  INFO 16372 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$629485ea] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 11:11:51.417  INFO 16372 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 11:11:51.418  INFO 16372 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7ba2e023' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 11:11:51.421  INFO 16372 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$8769289c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 11:11:51.422  INFO 16372 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 11:11:51.610  INFO 16372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-04 11:11:51.611  INFO 16372 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-04 11:11:51.611  INFO 16372 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2022-04-04 11:11:51.641  INFO 16372 --- [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2022-04-04 11:11:51.641  INFO 16372 --- [  restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 870 ms
+2022-04-04 11:11:51.674 ERROR 16372 --- [  restartedMain] o.s.b.web.embedded.tomcat.TomcatStarter  : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtTokenAuthorizationOncePerRequestFilter': Unsatisfied dependency expressed through field 'jwtInMemoryUserDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtInMemoryUserDetailsService': Unsatisfied dependency expressed through field 'jpaRespository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userJpaRespository': Cannot create inner bean '(inner bean)#4266f863' of type [org.springframework.orm.jpa.SharedEntityManagerCreator] while setting bean property 'entityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#4266f863': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'inMemoryDatabaseShutdownExecutor' defined in class path resource [org/springframework/boot/devtools/autoconfigure/DevToolsDataSourceAutoConfiguration.class]: Unsatisfied dependency expressed through method 'inMemoryDatabaseShutdownExecutor' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2022-04-04 11:11:51.676  INFO 16372 --- [  restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-04-04 11:11:51.678  WARN 16372 --- [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2022-04-04 11:11:51.682  INFO 16372 --- [  restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-04-04 11:11:51.683 ERROR 16372 --- [  restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.4.RELEASE)
+
+2022-04-04 11:11:58.221  INFO 16372 --- [  restartedMain] com.rajan.ecommerce9.Application         : Starting Application on DESKTOP-00U4LSQ with PID 16372 (D:\Workspace\ecommerce.14092019\target\classes started by DELL in D:\Workspace\ecommerce.14092019)
+2022-04-04 11:11:58.221  INFO 16372 --- [  restartedMain] com.rajan.ecommerce9.Application         : No active profile set, falling back to default profiles: default
+2022-04-04 11:11:58.542  INFO 16372 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-04-04 11:11:58.568  INFO 16372 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 6 repository interfaces.
+2022-04-04 11:11:58.629  INFO 16372 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c9e6bdb0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 11:11:58.631  INFO 16372 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$629485ea] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 11:11:58.632  INFO 16372 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 11:11:58.633  INFO 16372 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1865d41' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 11:11:58.635  INFO 16372 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$8769289c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 11:11:58.636  INFO 16372 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 11:11:58.685  INFO 16372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-04-04 11:11:58.686  INFO 16372 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-04 11:11:58.686  INFO 16372 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2022-04-04 11:11:58.739  INFO 16372 --- [  restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2022-04-04 11:11:58.740 DEBUG 16372 --- [  restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2022-04-04 11:11:58.741  INFO 16372 --- [  restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 518 ms
+2022-04-04 11:11:58.851  INFO 16372 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-04-04 11:11:58.878  INFO 16372 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-04-04 11:11:59.272  INFO 16372 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-04 11:11:59.367  INFO 16372 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+################## Application Starting #####################
+2022-04-04 11:11:59.576  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/authenticate', POST], []
+2022-04-04 11:11:59.576  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**', OPTIONS], []
+2022-04-04 11:11:59.576  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/', GET], []
+2022-04-04 11:11:59.576  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/allProduct/{key}/**/**'], []
+2022-04-04 11:11:59.576  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage1/**/**'], []
+2022-04-04 11:11:59.576  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage2/**/**'], []
+2022-04-04 11:11:59.576  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/uploadImage3/**/**'], []
+2022-04-04 11:11:59.576  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/upload/**/**'], []
+2022-04-04 11:11:59.576  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/getProductById/{id}/**/**'], []
+2022-04-04 11:11:59.576  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/getProductByCategory/{category}/**/**'], []
+2022-04-04 11:11:59.576  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/setData/**/**'], []
+2022-04-04 11:11:59.584  INFO 16372 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68ef7a0e, org.springframework.security.web.context.SecurityContextPersistenceFilter@53412a10, org.springframework.security.web.header.HeaderWriterFilter@853df4e, org.springframework.security.web.authentication.logout.LogoutFilter@5b3674a2, com.rajan.ecommerce9.jwt.JwtTokenAuthorizationOncePerRequestFilter@222ee1f4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3e0e1aa2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@28311b82, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@67a7ed37, org.springframework.security.web.session.SessionManagementFilter@7d81cea8, org.springframework.security.web.access.ExceptionTranslationFilter@4d6408c2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@75e00af]
+2022-04-04 11:11:59.603 DEBUG 16372 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2022-04-04 11:11:59.643  INFO 16372 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-04 11:11:59.646 DEBUG 16372 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-04-04 11:11:59.649  WARN 16372 --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-04 11:11:59.664 DEBUG 16372 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 38 mappings in 'requestMappingHandlerMapping'
+2022-04-04 11:11:59.671 DEBUG 16372 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-04-04 11:11:59.674 DEBUG 16372 --- [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-04-04 11:11:59.679  INFO 16372 --- [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2022-04-04 11:11:59.736  INFO 16372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-04-04 11:11:59.737  INFO 16372 --- [  restartedMain] com.rajan.ecommerce9.Application         : Started Application in 1.55 seconds (JVM running for 415.019)
+2022-04-04 11:11:59.738  INFO 16372 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+java.lang.IllegalStateException: FirebaseApp name [DEFAULT] already exists!
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:511)
+	at com.google.firebase.FirebaseApp.initializeApp(FirebaseApp.java:221)
+	at com.google.firebase.FirebaseApp.initializeApp(FirebaseApp.java:214)
+	at com.google.firebase.FirebaseApp.initializeApp(FirebaseApp.java:201)
+	at com.rajan.ecommerce9.Application.connectionFirebase(Application.java:40)
+	at com.rajan.ecommerce9.Application.main(Application.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
