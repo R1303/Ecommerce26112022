@@ -3,6 +3,7 @@ import { TodoDataService } from '../service/data/todo-data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../list-todos/list-todos.component';
 import { BasicAuthenticationService } from '../service/basic-authentication.service';
+import { EncrDecrServiceService } from '../service/encr-decr-service.service';
 
 @Component({
   selector: 'app-register',
@@ -30,7 +31,8 @@ export class RegisterComponent implements OnInit {
   constructor(private todoService: TodoDataService,
     private router: ActivatedRoute,
     private routerNavigate: Router,
-    private authenticateUser: BasicAuthenticationService) { }
+    private authenticateUser: BasicAuthenticationService,
+    private encryptService:EncrDecrServiceService) { }
 
   ngOnInit() {
 
@@ -38,7 +40,7 @@ export class RegisterComponent implements OnInit {
 
   saveTodo() {
     this.showRegister = true;
-    this.user = new User(this.id, this.userName, this.userEmail, this.userPhoneNumber, this.userPassword,'null');
+    this.user = new User(this.id, this.userName, this.userEmail, this.userPhoneNumber, this.encryptService.testEncrypt(this.userPassword),'null');
     this.addThroughPhp(this.user);
     const getDownloadProgress = () => {
       if (this.progress <= 110) {
@@ -66,9 +68,11 @@ export class RegisterComponent implements OnInit {
   }
 
   addThroughPhp(user){
-    this.todoService.addTodo(user).subscribe(
+    this.encryptService.testEncrypt(user.userPassword);
+    this.todoService.addUserMongoDB(user).subscribe(
       data => {
-        if(data=="User Already Exist"){
+        console.log(JSON.parse(JSON.stringify(data)).data);
+        if(JSON.parse(JSON.stringify(data)).data=="User Already Exist"){
           this.errorMsg = "User Already Exist !!"
           this.isValid = false;
           this.isResponse = true;
@@ -79,9 +83,9 @@ export class RegisterComponent implements OnInit {
         this.isResponse = true;
         this.authenticateUser.setAuthorizedUser(this.userName);
         sessionStorage.setItem('verifiedUser', this.userName);  
-        sessionStorage.setItem('email', JSON.parse(JSON.stringify(data)).user_email);
-        sessionStorage.setItem('phone', JSON.parse(JSON.stringify(data)).user_mobileno);
-        sessionStorage.setItem('id',JSON.parse(JSON.stringify(data)).id);
+        sessionStorage.setItem('email', JSON.parse(JSON.stringify(data)).userEmail);
+        sessionStorage.setItem('phone', JSON.parse(JSON.stringify(data)).userPhoneNumber);
+        sessionStorage.setItem('id',JSON.parse(JSON.stringify(data))._id);
       }
       },
       error =>{

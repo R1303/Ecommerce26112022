@@ -9,7 +9,7 @@
 </div>
  <br/> 
  
-<section   *ngIf="!isPC && showScreen" style="height: 1000px;">
+<section   *ngIf="!isPC && showScreen && !showSpinner" style="height: auto">
   <div class="container">
     <div class="row">
       <div class="list-inline">
@@ -101,7 +101,7 @@
   </div>
 </section>
 
- <section *ngIf="isPC && showScreen">
+ <section *ngIf="isPC && showScreen && !showSpinner">
   <div class="container">
     <div class="row">
       <div class="list-inline">

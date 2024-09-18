@@ -14,16 +14,17 @@
 <table *ngIf="isPC" class="table" style="border: 4px;border-color: black;">
   <thead>
     <tr>
-      <th scope="col" style="background-color: green;color: #000;">id</th>
+      <th scope="col" style="background-color: green;color: #000;">Type</th>
       <th scope="col" style="background-color: green;color: #000;">Address</th>
       <th scope="col" style="background-color: green;color: #000;">Action</th>
     </tr>
   </thead>
   <tbody *ngFor="let address of addressArray">
     <tr>
-      <td width="10%" style="color: black;">{{address.address_id}}</td>
+      <td *ngIf="address.address_type!='null'" width="10%" style="color: black;">{{address.address_type}}</td>
+      <td *ngIf="address.address_type=='null'" width="10%" style="color: black;">&nbsp;</td>
       <td width="60%" style="color: black;">{{address.address_line_1}},{{address.address_line_2}}<br>{{address.city}},{{address.state}}<br>{{address.pincode}}</td>
-      <td width="40%"><span><button type="button" (click)="makeDefault(address.address_id);" class="btn btn-success">Make Default</button></span>&nbsp;&nbsp;<span><button (click)="deleteAddress(address.address_id);" type="button" class="btn btn-danger">Delete</button></span></td>
+      <td width="40%"><span *ngIf="address.address_type=='null'"><button type="button" (click)="makeDefault(address._id);" class="btn btn-success">Make Default</button></span>&nbsp;&nbsp;<span><button (click)="deleteAddress(address.address_id);" type="button" class="btn btn-danger">Delete</button></span></td>
     </tr>
   </tbody>
 </table>
@@ -38,8 +39,8 @@
         {{address.address_line_2}}
         {{address.city}},{{address.state}}<br>{{address.pincode}}
       </span>
-      <span><div><button type="button" (click)="deleteAddress(address.address_id);" class="btn btn-danger" style="width:fit-content;height:30px;"><p style="font-size: 10px;">Delete</p></button></div><br>
-      <div *ngIf="address.address_type=='null'"><button type="button" (click)="makeDefault(address.address_id);" class="btn btn-success" style="width:fit-content;height:30px;" value="Default"><p style="font-size: 10px;">Set Default</p></button></div>
+      <span><div><button type="button" (click)="deleteAddress(address._id);" class="btn btn-danger" style="width:fit-content;height:30px;"><p style="font-size: 10px;">Delete</p></button></div><br>
+      <div *ngIf="address.address_type=='null'"><button type="button" (click)="makeDefault(address._id);" class="btn btn-success" style="width:fit-content;height:30px;" value="Default"><p style="font-size: 10px;">Set Default</p></button></div>
      </span> 
     </div>
     

@@ -23,6 +23,7 @@ export class AllAddressComponent implements OnInit {
   showProgress = false;
   isPC: boolean;
   addressArray: Address[];
+  updateAddressArray: Address[];
   address: Address;
   showAddress: boolean;
   isMoreAddress: boolean;
@@ -64,7 +65,7 @@ export class AllAddressComponent implements OnInit {
   }
 
   onPageLoad(){
-    this.todoService.getAddressUsingUserID(sessionStorage.getItem('id')).subscribe(
+    this.todoService.getAddressUsingUserIDMongoDB(sessionStorage.getItem('id')).subscribe(
       response => {
         this.addressArray = response;
         if (this.addressArray.length > 0) {
@@ -82,7 +83,7 @@ export class AllAddressComponent implements OnInit {
   selectAddressHit(id) {
     for (var i = 0; i < this.addressArray.length; i++) {
       var address = this.addressArray[i];
-      if (address.address_id == id) {
+      if (address._id == id) {
         this.selectedAddress = address;
         console.log(this.selectedAddress);
         this.line1 = this.selectedAddress.address_line_1;
@@ -99,9 +100,14 @@ export class AllAddressComponent implements OnInit {
     this.showSpinner=true;
     this.selectAddressHit(id);
     if (this.selectedAddress != null) {
-      this.todoService.UpdateAddress(sessionStorage.getItem('id'), this.selectedAddress).subscribe(
+      this.todoService.UpdateAddressMongoDB(sessionStorage.getItem('id'), this.selectedAddress).subscribe(
         response => {
           this.showAlertPopup("Address Successfull Updated !!");
+          this.updateAddressArray = this.addressArray.filter(x=>x._id!=id);
+          this.updateAddressArray.forEach(element => {
+            element.address_type = "null";
+            this.todoService.UpdateAddressMongoDB(sessionStorage.getItem('id'),element).subscribe();
+          });
         }
       );
     }
@@ -123,7 +129,7 @@ export class AllAddressComponent implements OnInit {
   showAlertPopup(message) {
     const source = timer(1000,1000);
     const abc = source.subscribe(val => {
-      if(val==6){
+      if(val==1){
         abc.unsubscribe();
         this.showAlert=false;
       }

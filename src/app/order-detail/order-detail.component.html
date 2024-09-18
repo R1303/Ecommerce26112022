@@ -17,11 +17,14 @@
         <hr>
       <div class="row d-flex justify-content-between px-3 top">
           <div class="d-flex">
-              <h4>ORDER <span class="text-primary font-weight-bold">{{productName}}</span><br>
-                <span style="font-size: 20px; color: black;">Quantity - </span>
+              <h4>
+                <span style="font-size: 20px; color: black;">Order Id : </span>
+                <span class="text-primary font-weight-bold">{{id}}</span><br>
+                Product Name : <span class="text-primary font-weight-bold">{{productName}}</span><br>
+                <span style="font-size: 20px; color: black;">Quantity : </span>
                 <span class="text-primary font-weight-bold">{{quantity}}</span><br>
 
-                <span style="font-size: 20px; color: black;">Total Price - </span>
+                <span style="font-size: 20px; color: black;">Total Price : </span>
                 <span class="text-primary font-weight-bold">{{totalPrice}}</span>
               </h4>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -29,7 +32,7 @@
 						        
           </div>
           <div class="d-flex flex-column text-sm-right">
-              <p class="mb-0"><b>Expected Arrival :</b> <span>{{expectedDate}}</span></p>
+              <p class="mb-0"><b>Expected Arrival :</b> <span style="color: blue;font-weight: bold;">{{expectedDate}}</span></p>
               <h3>Delivered At</h3>
               <p class="mb-0">{{addressLine1}}<span></span></p>
               <p class="mb-0">{{addressLine2}}<span></span></p>
@@ -102,11 +105,11 @@
   <div class="card">
       <div class="row d-flex justify-content-between px-3 top">
           <div class="d-flex">
-              <h4>ORDER <span class="text-primary font-weight-bold">{{productName}}</span><br>
-                <span style="font-size: 15px; color: black;">Quantity - </span>
+              <h4>Product Name : <span class="text-primary font-weight-bold">{{productName}}</span><br>
+                <span style="font-size: 15px; color: black;">Quantity : </span>
                 <span class="text-primary">{{quantity}}</span><br>
 
-                <span style="font-size: 15px; color: black;">Total - </span>
+                <span style="font-size: 15px; color: black;">Total : </span>
                 <span class="text-primary">{{totalPrice}}</span>
               </h4>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -114,7 +117,7 @@
 						        
           </div>
           <div class="d-flex flex-column text-sm-right">
-              <p class="mb-0">Expected Arrival :  <span>{{expectedDate}}</span></p>
+              <p class="mb-0">Expected Arrival :  <span style="color: blue;font-weight: bold;">{{expectedDate}}</span></p>
               <h3>Delivered At</h3>
               <p class="mb-0">{{addressLine1}}<span></span></p>
               <p class="mb-0">{{addressLine2}}<span></span></p>

@@ -5,7 +5,6 @@ import { BasicAuthenticationService } from '../service/basic-authentication.serv
 import { TodoDataService } from '../service/data/todo-data.service';
 import { EncrDecrServiceService } from '../service/encr-decr-service.service';
 import { User } from '../list-todos/list-todos.component';
-import { Jsonp } from '@angular/http';
 import { stringify } from 'querystring';
 
 @Component({
@@ -93,6 +92,48 @@ export class LoginComponent implements OnInit {
             this.invalidLogin=false;
             this.showSpinner=false;
             this.router.navigate(['main',JSON.parse(JSON.stringify(data)).user_name]);
+          }
+        }  
+        this.intervalId = setInterval(getDownloadProgress, 9);
+        this.invalidLogin=false
+      },
+      error =>{
+        this.showSpinner=false;
+        this.doNotShowLoginForm=false;
+        this.invalidLogin=true;
+        this.username='';
+        this.password='';
+      }
+    );
+    
+  }
+
+  handleLoginThroughMongoDB(){
+    this.invalidLogin=false;
+    this.showProgress=true;
+    this.doNotShowLoginForm=true;
+    this.showSpinner=true;
+    var encryptPassword = this.encryptService.testEncrypt(this.password);
+    this.DBservise.getUserMongoDB(this.username,encryptPassword).subscribe(
+      data =>{
+        const getDownloadProgress = () => {
+          if (this.progress <= 101) {
+            sessionStorage.setItem('verifiedUser', JSON.parse(JSON.stringify(data)).userName);
+            sessionStorage.setItem('email', JSON.parse(JSON.stringify(data)).userEmail);
+            sessionStorage.setItem('phone', JSON.parse(JSON.stringify(data)).userPhoneNumber);
+            sessionStorage.setItem('id',JSON.parse(JSON.stringify(data))._id);
+            this.progress = this.progress + 1;
+            this.showProgress=true;
+            this.doNotShowLoginForm=true;
+           this.showSpinner=true;
+          }
+          else {
+            clearInterval(this.intervalId);
+            this.showProgress=false;
+            this.doNotShowLoginForm=false;
+            this.invalidLogin=false;
+            this.showSpinner=false;
+            this.router.navigate(['main',JSON.parse(JSON.stringify(data)).userName]);
           }
         }  
         this.intervalId = setInterval(getDownloadProgress, 9);

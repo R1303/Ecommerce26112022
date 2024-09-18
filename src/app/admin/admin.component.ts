@@ -19,14 +19,14 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
     this.isPC = this.basicAuthService.isPC();
-    this.service.allProductonShopScreen().subscribe(
+    this.service.allProductonShopScreenMongoDB().subscribe(
       response =>{
         this.productArray=response;
         if(this.productArray.length>0){
         }
       }
     );
-    this.service.allOrderDetail().subscribe(
+    this.service.allOrderDetailMongoDB().subscribe(
       response=>{
         this.orderArray=response;
         this.orderArray.sort((a, b) => new Date(b.orderedDate).getTime() - new Date(a.orderedDate).getTime());
@@ -36,11 +36,12 @@ export class AdminComponent implements OnInit {
   }
 
   deleteProduct(id){
-    this.service.deleteProduct(id).subscribe(
+    this.service.deleteProductMongoDB(id).subscribe(
       response=>{
         window.location.reload();
       }
     )
+    //window.location.reload();
   }
 
   openPage(pageName, elmnt, color) {
@@ -79,7 +80,7 @@ export class AdminComponent implements OnInit {
   updateStatus(){
     this.updateMyOrder.status=this.status;
     this.disMissMadal('updateStatus');
-    this.service.updateOrder(this.updateMyOrder).subscribe(
+    this.service.updateOrderMongoDB(this.updateMyOrder).subscribe(
       response =>{
         //window.location.reload();
         

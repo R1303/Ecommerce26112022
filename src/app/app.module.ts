@@ -32,6 +32,10 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { AllAddressComponent } from './all-address/all-address.component';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { environment } from 'src/environments/environment';
 import { DatePipe } from '@angular/common';
 declare var require: any;
 @NgModule({
@@ -67,7 +71,8 @@ declare var require: any;
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    
+AngularFireModule.initializeApp(environment.firebaseConfig),
+AngularFireStorageModule,
     NgCircleProgressModule.forRoot({
      
     }),

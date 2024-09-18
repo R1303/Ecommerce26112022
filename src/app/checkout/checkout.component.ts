@@ -72,7 +72,7 @@ export class CheckoutComponent implements OnInit {
         
     //   }
     // )
-    this.dataServide.getCartDetailPHP(this.authService.getUserID()).subscribe(
+    this.dataServide.getCartDetailMongoDB(this.authService.getUserID()).subscribe(
       response =>{
         this.cartArray=response;
         for(var i=0;i<this.cartArray.length;i++){
@@ -84,7 +84,7 @@ export class CheckoutComponent implements OnInit {
   }
 }
 addOrder(cart){
-  this.dataServide.setOrderDetailPHP(cart,this.dataServide.getCheckOutDetail()).subscribe(
+  this.dataServide.setOrderDetailMongoDB(cart,this.dataServide.getCheckOutDetail()).subscribe(
     response =>{
      this.router.navigate(['placeOrder']);
     }
@@ -92,7 +92,7 @@ addOrder(cart){
 }
 
 deleteCartItem(id){
-  this.dataServide.deleteCartItemPHP(id).subscribe(
+  this.dataServide.deleteCartItemMongoDB(id).subscribe(
     response=>{
 
     }

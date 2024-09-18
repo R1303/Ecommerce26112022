@@ -6,6 +6,8 @@ import { User, Address } from '../list-todos/list-todos.component';
 import { BasicAuthenticationService } from '../service/basic-authentication.service';
 import { API_URL } from '../app.constants';
 import * as MobileDetect from 'mobile-detect';
+import { finalize } from 'rxjs';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 
 @Component({
@@ -51,11 +53,13 @@ export class WelcomeComponent implements OnInit {
   blankMobile:boolean;
   user_id:any;
   application_url:string;
+  user_image:string;
   constructor(private route: ActivatedRoute,
     private service: WelcomeDataService,
     private todoService: TodoDataService,
     private basicAuthService: BasicAuthenticationService,
-    private router:Router) { }
+    private router:Router,
+    private storage:AngularFireStorage) { }
   ngOnInit() {
     this.showSpinner = true;
     this.checkProfilePic();
@@ -65,16 +69,18 @@ export class WelcomeComponent implements OnInit {
     var md = new MobileDetect(userAgent);
     this.isPC = md.mobile()!=null;
     this.user_id=this.getId();
-    this.isAdmin = this.basicAuthService.isAdmin();
+    this.isAdmin = this.isAdminUser(this.user_id);
     this.name = this.route.snapshot.params['name'];
-    this.todoService.getUser(this.getId()).subscribe(
+    this.todoService.getUserByIDMongoDB(this.getId()).subscribe(
       response=>{
           this.User=response;
           this.email = this.User.userEmail;
           this.phone = this.User.userPhoneNumber;
-     
-
-          this.todoService.getAddressUsingUserID(this.getId()).subscribe(
+          this.user_image = this.User.user_image;
+          if(this.user_image!=null || this.user_image==undefined){
+            this.isProfilePicAvailable = true;
+          }
+          this.todoService.getAddressUsingUserIDMongoDB(this.getId()).subscribe(
             response => {
               this.addressArray = response;
               if (this.addressArray.length > 0) {
@@ -106,6 +112,9 @@ export class WelcomeComponent implements OnInit {
     
   }
 
+  isAdminUser(id){
+    return id=="63de4647732cefaa102d9a48";
+  }
 
   checkProfilePic(){
     if(sessionStorage.getItem('pic_type')!='null' && sessionStorage.getItem('pic_type')!='undefined'){
@@ -194,6 +203,46 @@ export class WelcomeComponent implements OnInit {
     
   }
 
+  uploadImageInFirebase(){
+    const filePath = `user_images/${this.name}/${this.fileToUpload.name}`;
+    const fileRef = this.storage.ref(filePath);
+    const task =  fileRef.put(this.fileToUpload);   
+    
+    // const uploadTask = task.snapshotChanges().pipe(
+    //   finalize(() => {
+    //     fileRef.getDownloadURL().subscribe(url => {
+    //       this.User.user_image=url;
+    //       this.todoService.updateUserMongoDB(this.User).subscribe(
+    //         response=>{
+    //           sessionStorage.setItem('pic_type',this.fileToUpload.type);
+    //           this.showSpinner=false;
+    //           alert("SuccessFully Uploaded !!")
+    //           window.location.reload();
+    //         }
+    //       )
+    //     })
+    //     })
+    //   );
+
+      task.snapshotChanges().subscribe(snapshot => {
+        if (snapshot.state === 'success') {
+          console.log('Upload successful');
+          fileRef.getDownloadURL().subscribe(downloadURL => {
+            console.log('File available at', downloadURL);
+            this.User.user_image=downloadURL;
+             this.todoService.updateUserMongoDB(this.User).subscribe(
+            response=>{
+              sessionStorage.setItem('pic_type',this.fileToUpload.type);
+              this.showSpinner=false;
+              alert("SuccessFully Uploaded !!")
+              window.location.reload();
+            }
+          )
+          });
+        }
+      });
+  }
+
   showModal(id) {
     var address = document.querySelector('#' + id);
     console.log(address);
@@ -207,10 +256,10 @@ export class WelcomeComponent implements OnInit {
   }
 
   getAddress(id) {
-    this.todoService.getAddressUsingUserIDPHP(id).subscribe(
+    this.todoService.getAddressUsingUserIDMongoDB(id).subscribe(
       response => {
         this.addressArray = response;
-        alert(this.addressArray[0].address_id);
+        alert(this.addressArray[0]._id);
       }
     );
   }
@@ -219,8 +268,8 @@ export class WelcomeComponent implements OnInit {
     this.showSpinner = true;
     this.showScreen = false;
     this.disMissMadal('AddAddress');
-    this.dummyAddress = new Address(this.addressId, this.line1, this.line2, this.city, this.state, this.pincode, (Number(this.getId())), "null");
-    this.todoService.addAddress(this.dummyAddress).subscribe(
+    this.dummyAddress = new Address(this.addressId, this.line1, this.line2, this.city, this.state, this.pincode, this.getId(), "null");
+    this.todoService.addAddressMongoDB(this.dummyAddress).subscribe(
       response => {
         this.showSpinner = false;
         this.showScreen = true;
@@ -235,10 +284,8 @@ export class WelcomeComponent implements OnInit {
   updateMobileNo() {
     this.disMissMadal('updatePhoneNo');
     sessionStorage.setItem('phone',this.phone);
-    this.basicAuthService.getUserDetail();
-    this.User = this.basicAuthService.getUserById();
     this.User.userPhoneNumber=this.phone;
-    this.todoService.UpdateUser(this.basicAuthService.getUserID(),this.User).subscribe(
+    this.todoService.updateUserMongoDB(this.User).subscribe(
       response=>{
         this.ngOnInit();
       }
@@ -260,7 +307,7 @@ export class WelcomeComponent implements OnInit {
   selectAddressHit(id) {
     for (var i = 0; i < this.addressArray.length; i++) {
       var address = this.addressArray[i];
-      if (address.address_id == id) {
+      if (address._id == id) {
         this.selectedAddress = address;
         console.log(this.selectedAddress);
         this.line1 = this.selectedAddress.address_line_1;
@@ -275,7 +322,7 @@ export class WelcomeComponent implements OnInit {
 
   makeDefault() {
     if (this.selectedAddress != null) {
-      this.todoService.UpdateAddressPHP(this.getId(), this.selectedAddress).subscribe(
+      this.todoService.UpdateAddressMongoDB(this.getId(), this.selectedAddress).subscribe(
         response => {
           console.log("Address Updated")
         }

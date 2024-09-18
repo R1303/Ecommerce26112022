@@ -89,16 +89,16 @@ export class BasicAuthenticationService {
   }
 
   getUserID() {
-     if (!(sessionStorage.getItem('token') === "Bearer User Already Present")) {
-       var token = sessionStorage.getItem('token').split("%id%");
-       sessionStorage.setItem('id',token[1]);
-       return token[1];
-     }
-     else {
-       return null;
-     }
+    //  if (!(sessionStorage.getItem('token') === "Bearer User Already Present")) {
+    //    var token = sessionStorage.getItem('token').split("%id%");
+    //    sessionStorage.setItem('id',token[1]);
+    //    return token[1];
+    //  }
+    //  else {
+    //    return null;
+    //  }
 
-    //return sessionStorage.getItem('id');
+    return sessionStorage.getItem('id');
   }
 
   getUserDetail() {
@@ -153,7 +153,7 @@ export class BasicAuthenticationService {
 
   }
   isAdmin(){
-    if(this.getUserID()=="10002"){
+    if(this.getUserID()=="63de4647732cefaa102d9a48"){
       return true;
     }
     return false;

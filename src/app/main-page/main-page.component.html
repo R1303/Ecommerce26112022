@@ -166,26 +166,25 @@
     </div>
   </div>
   <div class="container" *ngIf="!isPC">
-    <div class="row">
-      <div class="list-inline-item" *ngFor="let products of productArray">
-        <br/>  
-        <div style="width:150px; height: 150px; margin-right: 6px; margin-top: 25px;">
+    <div>
+      <div *ngFor="let products of productArray">
+      <div class="col-md-12 heading-section text-center">
               <div class="card h-100 product">
                 <a (click)="navigateToSingleProduct(products.id);"  class="card-img-top img-prod">
                   <img class="img-fluid" src={{products.productImage1}} alt="Network Error" width="280px" height="280px" >
     
                   <span class="status">{{products.category}}</span>
-                  <!-- <div class="overlay"></div> -->
+                  
                 </a>
                 <div class="card-body">
                   <div class="text py-3 pb-4 px-3 text-center">
                     <h3><a (click)="navigateToSingleProduct(products.id);" style="text-transform: capitalize;" >{{products.productName.substring(0,7)}}<span *ngIf="products.productName.length>7">....</span></a></h3>
-                    <!-- <div class="d-flex"> -->
+                   
                       <div class="pricing">
-                        <p class="price"><span style="display: inline-block;" class="mr-2 price-dc">Rs.{{(products.productPrice*120)/100}}/kg</span>
-                          <br><span class="price-sale">Rs. {{products.productPrice}}/kg</span></p>
+                        <p class="price"><span style="display: inline-block;" class="mr-2 price-dc"><span class="fa">&#8377;</span>  {{(products.productPrice*120)/100}}/kg</span>
+                          <br><span class="price-sale"><span class="fa">&#8377;</span> {{products.productPrice}}/kg</span></p>
                       </div>
-                    <!-- </div> -->
+                    
                     <div class="bottom-area d-flex px-3">
                       <div class="m-auto d-flex">
                         <a  (click)="navigateToSingleProduct(products.id);" class="add-to-cart d-flex justify-content-center align-items-center text-center">
@@ -197,20 +196,22 @@
                 </div>
               </div>
           </div>
+          <!-- <br/>
           <br/>
           <br/>
-          <br/>
-          <br/>
+          <br/> -->
           </div>
 
     </div>
   </div>
 
+  
+
   <div class="container" *ngIf="isPC">
     <div class="row">
       <div class="list-inline">
         <div class="col-lg-3 col-md-6 list-inline-item" *ngFor="let products of productArray">
-          <br/>  
+          <br/>&nbsp;&nbsp;&nbsp;&nbsp; 
           <div style="width:180px; height: 180px; margin-right: 15px; margin-top: 25px;">
                 <div class="card h-100 product">
                   <a (click)="navigateToSingleProduct(products.id);"  class="card-img-top img-prod">
@@ -223,8 +224,8 @@
                       <h3><a (click)="navigateToSingleProduct(products.id);" style="text-transform: capitalize;" >{{products.productName.substring(0,7)}}<span *ngIf="products.productName.length>7">....</span></a></h3>
                       <div class="d-flex">
                         <div class="pricing">
-                          <p class="price"><span style="display: inline-block;" class="mr-2 price-dc">Rs. {{(products.productPrice*120)/100}}/kg</span>
-                            <br><span class="price-sale">Rs. {{products.productPrice}}/kg</span></p>
+                          <p class="price"><span style="display: inline-block;" class="mr-2 price-dc"><span class="fa">&#8377;</span> {{(products.productPrice*120)/100}}/kg</span>
+                            <br><span class="price-sale"><span class="fa">&#8377;</span> {{products.productPrice}}/kg</span></p>
                         </div>
                       </div>
                       <div class="bottom-area d-flex px-3">
@@ -243,10 +244,15 @@
             </div>
           </div>
 </section>
-<br/>
-<br/>
 
-<section class="ftco-section">
+<div class="container">
+  <div class="row justify-content-center mb-3 pb-3">
+    <div class="col-md-12 heading-section text-center">
+      <input class="btnSubmit"  type="button" (click)="navigateToShop()" value="Show More ->">
+    </div>
+  </div>
+</div>
+<!-- <section class="ftco-section">
   <div class="container">
     <div class="row no-gutters ftco-services">
       <div class="col-md-4 text-center d-flex align-self-stretch">
@@ -287,5 +293,5 @@
       </div>
     </div>
   </div>
-</section> 
+</section>  -->
 </div>

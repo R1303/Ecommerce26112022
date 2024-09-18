@@ -23,6 +23,7 @@
 						        <th>Price</th>
 						        <th>Quantity</th>
 						        <th>Total</th>
+								<th>Status</th>
 						      </tr>
 						    </thead>
 						    
@@ -32,24 +33,32 @@
 								 -->
 								<td class="product-remove"></td>
 						         
-						        <td class="image-prod"><div class="img" (click)="navigateToSingleProduct(product.id)" ><img src="{{product.product_image1}}" class="img-fluid" alt="Network Error"></div></td>
+						        <td class="image-prod"><div class="img" (click)="navigateToSingleProduct(product.id)" ><img src="{{product.productImage1}}" class="img-fluid" alt="Network Error"></div></td>
 						        
 						        <td class="product-name">
-						        	<a (click)="navigateToSingleProduct(product.id)" style="color: blue;">{{product.product_name}}</a>
+						        	<a (click)="navigateToSingleProduct(product.id)" style="color: blue;font-weight: bolder;">{{product.productName}}</a>
 						        </td>
 						        
-						        <td class="price">{{product.product_price}}</td>
+						        <td class="price">{{product.productPrice}}</td>
+
+								<td class="quantity">{{product.quantity}}</td>
 						        
-						        <td class="quantity">
+						        <!-- <td class="quantity">
 					          	<div class="input-group mb-3">
 											<span class="input-group-btn mr-2">
 											</span><input type="text" name="quantity"
 												class="form-control input-number" max="5" disabled="disabled" value="{{product.quantity}}"> <span class="input-group-btn ml-2">
 											</span>
 										</div>
-									</td>
+									</td> -->
 						        
 						        <td class="total"><p>{{product.total}}</p></td>
+								<td>
+									<span *ngIf="product.status=='Delivered'" style="color: green;font-weight: bolder;" >{{product.status}}</span>
+				  					<span *ngIf="product.status=='Confirmed'" style="color: blue;font-weight: bolder;" >{{product.status}}</span>
+				 					<span *ngIf="product.status=='Shipped'" style="color: yellowgreen;font-weight: bolder;"  >{{product.status}}</span>
+				  					<span *ngIf="product.status=='OnRoute'" style="color: yellow;font-weight: bolder;" >{{product.status}}</span>
+								</td>
 						      </tr><!-- END TR-->
                             </tbody>
 						  </table>
@@ -57,12 +66,12 @@
               <div *ngFor="let product of productArray">
                 <br/>
                 <div class="d-flex inlineDisplay cart-total">
-                 <span><div class="img image-prod"><img src="{{product.product_image1}}" class="img-fluid" 
+                 <span><div class="img image-prod"><img src="{{product.productImage1}}" class="img-fluid" 
                   alt="Network Error" width="100px" height="100px"></div>
                   </span>
                   <span>
-                    <h3 style="color: blue;" routerLink="" (click)="navigateToSingleProduct(product.id)">{{product.product_name}}</h3>
-                    <label><b>Price :  </b></label>{{product.product_price}}
+                    <h3 style="color: blue;" routerLink="" (click)="navigateToSingleProduct(product.id)">{{product.productName}}</h3>
+                    <label><b>Price :  </b></label>{{product.productPrice}}
                     <label><b>Qnty. :  </b></label>{{product.quantity}}
                     <label><b>Total. :  </b></label>{{product.total}}
 				  </span>

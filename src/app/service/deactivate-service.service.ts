@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import {CanActivate } from '@angular/router/src/utils/preactivation';
-import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, Router,CanActivate } from '@angular/router';
 import { HardcodedAuthenticationService } from './hardcoded-authentication.service';
 
 @Injectable({

@@ -4,7 +4,6 @@ import { Todo, User, Address, Product, Products, Cart, MyOrder, HomePage, Respon
 import { API_URL } from 'src/app/app.constants';
 import { CheckoutDetail } from 'src/app/cart/cart.component';
 import { EncrDecrServiceService } from '../encr-decr-service.service';
-import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
 import { DatePipe } from '@angular/common';
 
 @Injectable({
@@ -13,6 +12,7 @@ import { DatePipe } from '@angular/common';
 export class TodoDataService {
   userdata:User;
   cartData:Cart;
+ 
   productData:Products;
   addressData:Address;
   productArray:Products[]
@@ -21,6 +21,7 @@ export class TodoDataService {
   orderData:MyOrder;
   useJavaMethod=true;
   responseMessgae:any
+  saveCartData:Cart;
   constructor(private http:HttpClient,
     private encryptKey:EncrDecrServiceService,
     public datepipe: DatePipe) { }
@@ -415,7 +416,7 @@ export class TodoDataService {
       form.append("pincode",this.addressData.pincode.toString());
       form.append("state",this.addressData.state);
       form.append("user_id",user_id);
-      form.append("address_id",this.addressData.address_id.toString());
+      form.append("address_id",this.addressData._id.toString());
     try {
       return this.http.post(`${API_URL}/addressAction.php`,form); 
     } catch (error) {
@@ -457,7 +458,7 @@ export class TodoDataService {
       form.append("expected_date",this.datepipe.transform(this.expectedDate, 'yyyy-MM-dd'));
       form.append("order_date",this.datepipe.transform(new Date(), 'yyyy-MM-dd'));
     try {
-      return this.http.post(`${API_URL}/orderDetail.php`,form);  
+      return this.http.post(`${API_URL}/api/addOrderDetails`,form);  
     } catch (error) {
       
     } 
@@ -526,5 +527,190 @@ export class TodoDataService {
       return this.http.get(`${API_URL}/user_data.php?id=`+id); 
   }
 
+
+  // -------------------------------------------------------------
+
+  getUserMongoDB(email,pass){
+      return this.http.get(`${API_URL}/api/login/`+email+`/`+pass);
+  }
+
+  updateUserMongoDB(user){
+    try {
+      return this.http.put(`${API_URL}/api/updateUser`,user);  
+    } catch (error) {
+      
+    } 
+  }
+
+  homePageDetailMongoDB(){
+    try {
+       return this.http.get<HomePage[]>(`${API_URL}/api/home_page_details`);
+    } catch (error) {
+      
+    } 
+  }
+
+  allProductonShopScreenMongoDB(){
+    try {
+       return this.http.get<Products[]>(`${API_URL}/api/allProducts`)
+    } catch (error) {
+      
+    } 
+  }
+
+  ProductByIdMongoDB(id){
+    try {
+       return this.http.get<Products[]>(`${API_URL}/api/findById/`+id);
+    } catch (error) {
+      
+    } 
+  }
+
+  addProuctMongoDB(product){
+    return this.http.post(`${API_URL}/api/addProduct`,product);
+  }
+
+  deleteProductMongoDB(id){
+    try {
+      return this.http.delete(`${API_URL}/api/deleteProductItem/${id}`,id);  
+    } catch (error) {
+      return this.http.delete(`Error`);
+    } 
+  }
+
+  getUserByIDMongoDB(id){
+    try {
+      return this.http.get<User>(`${API_URL}/api/findUserById/${id}`);  
+    } catch (error) {
+      return this.http.get<User>(`Error`);
+    } 
+  }
+
+  getProductByCategoryMongoDB(category){
+    return this.http.get<Products[]>(`${API_URL}/api/findProductByCategory/${category}`);
+  }
+
+  getCartDetailByProductMongoDB(productId,userId){
+    return this.http.get<Cart[]>(`${API_URL}/api/getCartDetailProduct/`+productId+`/`+userId);
+  }
+
+
+  UpdateCartMongoDB(id,Cart){
+    this.cartData=Cart;
+    try {
+      return this.http.post(`${API_URL}/api/updateCartDetail`,this.cartData);  
+    } catch (error) {
+      
+    } 
+  }
+
+  saveCartMongoDB(cart){
+     return this.http.post(`${API_URL}/api/saveCartDetail`,cart);
+   }
+
+   getCartDetailMongoDB(userId){
+    return this.http.get<Cart[]>(`${API_URL}/api/getCartByUserId/`+userId);
+  }
+
+  getAddressUsingUserIDMongoDB(id){
+    try {
+      return this.http.get<Address[]>(`${API_URL}/api/getAddressByUserId/`+id);  
+    } catch (error) {
+      return this.http.get<Address[]>(`Error`);
+    } 
+  }
+
+  UpdateAddressMongoDB(user_id,address){
+    // this.addressData=address;
+    // var form = new FormData();
+    //   form.append("action", "updateAddress");
+    //   form.append("address_type",this.addressData.address_type);
+    //   form.append("city",this.addressData.city);
+    //   form.append("address_line_1",this.addressData.address_line_1);
+    //   form.append("address_line_2",this.addressData.address_line_2);
+    //   form.append("pincode",this.addressData.pincode.toString());
+    //   form.append("state",this.addressData.state);
+    //   form.append("user_id",user_id);
+    //   form.append("address_id",this.addressData._id.toString());
+    try {
+      return this.http.post(`${API_URL}/api/updateAddress`,address); 
+    } catch (error) {
+      
+    } 
+  }
+
+  addUserMongoDB(user){
+    try {
+      return this.http.post(`${API_URL}/api/register`,user);  
+    } catch (error) {
+      alert(error)
+    } 
+  }
+
+  addAddressMongoDB(address){
+    try {
+      return this.http.post(`${API_URL}/api/addAddress`,address);  
+    } catch (error) {
+      alert(error)
+    } 
+  }
+  deleteCartMongoDB(id){
+    try {
+      return this.http.post(`${API_URL}/api/deleteCartItem/${id}`,id);  
+    } catch (error) {
+      return this.http.delete(`Error`);
+    } 
+  }
+
+  deleteCartItemMongoDB(id){
+    try {
+      return this.http.post(`${API_URL}/api/deleteCartItemByID/${id}`,id);  
+    } catch (error) {
+      return this.http.delete(`Error`);
+    } 
+  }
+
+  deleteAddressMongoDB(id){
+    try {
+      return this.http.delete(`${API_URL}/api/deleteAddressById/${id}`);  
+    } catch (error) {
+      return this.http.delete(`Error`);
+    } 
+  }
+
+  setOrderDetailMongoDB(cart,checkOutDetail){
+    this.cartData=cart;
+    this.expectedDate = new Date();
+     this.expectedDate.setDate( this.expectedDate.getDate() + 7 );
+    this.orderData= new MyOrder(this.cartData.id,this.cartData.product_image1,this.cartData.product_name,
+      this.cartData.product_price,this.cartData.quantity,this.cartData.total,
+      this.cartData.fk_user,this.cartData.fk_product,
+      this.checkOutDetail.line1,this.checkOutDetail.line2,this.checkOutDetail.city,
+      this.checkOutDetail.state,this.checkOutDetail.pincode,"Confirmed",
+      this.datepipe.transform(new Date(), 'yyyy-MM-dd'),this.datepipe.transform(this.expectedDate, 'yyyy-MM-dd'))
+   try {
+     return this.http.post(`${API_URL}/api/addOrder`,this.orderData);  
+   } catch (error) {
+     
+   } 
+ }
+
+ getOrderDetailMongoDB(userId){
+  return this.http.get<MyOrder[]>(`${API_URL}/api/getOrderByUserId/`+userId);
+}
+
+getOrderDetailByOrderId(orderId){
+  return this.http.get<MyOrder>(`${API_URL}/api/getOrderByOrderId/`+orderId);
+}
+allOrderDetailMongoDB(){
+  return this.http.get<MyOrder[]>(`${API_URL}/api/allOrdersDetails`);
+}
+updateOrderMongoDB(order){
+  try {
+    return this.http.put<MyOrder[]>(`${API_URL}/api/updateOrder`,order);  
+  } catch (error) {
+    
+  } 
+}
 
 }

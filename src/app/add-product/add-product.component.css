@@ -398,7 +398,8 @@
 	border: none;
 	border-radius: 1.5rem;
 	padding: 1%;
-	width: 20%;
+	width: auto;
+    height: auto;
 	cursor: pointer;
 	background: #0062cc;
 	color: #fff;

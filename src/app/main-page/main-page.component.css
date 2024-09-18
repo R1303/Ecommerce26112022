@@ -15,6 +15,16 @@ h2 span {
  .list-inline-item:not(:last-child) {
     margin-right: 0px; 
 }
+.btnSubmit {
+	border: none;
+	border-radius: 1.5rem;
+	
+	width: 100%;
+    height: auto;
+	cursor: pointer;
+	background: darkgray;
+	color: #fff;
+}
 .img-fluid{
     height: 200px;
     width: 100%;

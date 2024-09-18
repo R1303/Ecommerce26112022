@@ -10,7 +10,7 @@
  
 <br/>
 
-<section style="height: 310px;">
+<section style="height: auto;">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 mb-6 justify-content-center">
@@ -48,7 +48,7 @@
             <a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Sold</span></a>
           </p>
         </div> -->
-        <p class="price"><span>INR {{productPrice}}/kg</span></p>
+        <p class="price"><span style="color: brown;"><span class="fa">&#8377;</span> {{productPrice}}/kg</span></p>
         <p>{{description}}</p>
         <div class="row mt-4">
           <!-- <div class="col-md-6">
@@ -66,13 +66,13 @@
           </div> -->
           <div class="w-100"></div>
           <div class="input-group col-md-6 d-flex mb-3">
-             <span class="input-group-btn mr-2">
+             <span class="input-group-btn mr-2" style="background-color: mediumaquamarine;">
                 <button type="button" (click)="minusButton();" class="quantity-left-minus btn"  data-type="minus" data-field="">
                  <i class="fa fa-minus"></i>
                 </button>
               </span>
-             <input type="text" disabled="true" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
-             <span class="input-group-btn ml-2">
+             <input type="text" disabled="true" id="quantity" style="font-weight: bold;" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+             <span class="input-group-btn ml-2" style="background-color: green;">
                 <button type="button" (click)="plusButton();" class="quantity-right-plus btn" data-type="plus" data-field="">
                    <i class="fa fa-plus"></i>
                </button>
@@ -85,8 +85,8 @@
           </div> -->
         </div>
       
-          <p *ngIf="!isUserLoggedIn"><a routerLink="/login" class="btn btn-black py-3 px-5">Login</a></p>
-          <p *ngIf="isUserLoggedIn"><a   (click)="addToCart();" class="btn btn-black py-3 px-5">Add To Cart</a></p>
+          <p *ngIf="!isUserLoggedIn"><a routerLink="/login" class="btn btn-black py-3 px-5">{{btnValue}}</a></p>
+          <p *ngIf="isUserLoggedIn"><a   (click)="addToCart();" class="btn btn-black py-3 px-5">{{btnValue}}</a></p>
           <!-- <p *ngIf="isUserLoggedIn"><a  href="#" onclick="openCart()" class="btn btn-black py-3 px-5">Add to Cart</a></p> -->
     </div>
     </div>
@@ -98,9 +98,9 @@
   <div class="container">
     <div class="row justify-content-center mb-3 pb-3">
       <div class="col-md-12 heading-section text-center">
-        <span class="subheading">Products</span>
+        <!-- <span class="subheading">Products</span> -->
         <h2 class="mb-4">Related Products</h2>
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+        <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p> -->
       </div>
     </div>   		
   </div>
@@ -108,26 +108,26 @@
     <div class="row">
       <div class="col-md-6 col-lg-3">
         <div class="product">
-          <a href="#" class="img-prod"><img class="img-fluid" src="{{product.product_image1}}" alt="Network Error">
+          <a (click)="navigateToSingleProduct(products.id);" class="img-prod"><img class="img-fluid" src="{{product.productImage1}}" alt="Network Error">
             <span class="status">{{product.category}}</span>
             <div class="overlay"></div>
           </a>
           <div class="text py-3 pb-4 px-3 text-center">
-            <h3><a href="#">{{product.product_name}}</a></h3>
+            <h3><a (click)="navigateToSingleProduct(products.id);">{{product.productName}}</a></h3>
             <div class="d-flex">
               <div class="pricing">
-                <p class="price"><span class="price-sale">INR {{product.product_price}}</span></p>
+                <p class="price"><span class="price-sale"><span class="fa">&#8377;</span> {{product.productPrice}}/kg</span></p>
               </div>
             </div>
             <div class="bottom-area d-flex px-3">
               <div class="m-auto d-flex">
-                <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                <a (click)="navigateToSingleProduct(products.id);" class="add-to-cart d-flex justify-content-center align-items-center text-center">
                   <span><i class="fa fa-bar"></i></span>
                 </a>
-                <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                <a (click)="navigateToSingleProduct(products.id);" class="buy-now d-flex justify-content-center align-items-center mx-1">
                   <span><i class="fa fa-cart"></i></span>
                 </a>
-                <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                <a (click)="navigateToSingleProduct(products.id);" class="heart d-flex justify-content-center align-items-center ">
                   <span><i class="fa fa-heart"></i></span>
                 </a>
               </div>
@@ -144,7 +144,7 @@
   <div class="container">
     <div class="row justify-content-center mb-3 pb-3">
       <div class="col-md-12 heading-section text-center">
-        <span class="subheading">Products</span>
+        <!-- <span class="subheading">Products</span> -->
         <h2 class="mb-4">Related Products</h2>
       </div>
     </div>   		
@@ -154,20 +154,20 @@
       <div class="list-inline">
         <div class="col-lg-3 col-md-6 list-inline-item" *ngFor="let products of categoryProduct">
           <br/>  
-          <div style="width:180px; height: 180px; margin-right: 15px;">
+          <div style="margin-right: 15px;">
                 <div class="card h-100 product">
                   <a (click)="navigateToSingleProduct(products.id);"  class="card-img-top img-prod">
-                    <img class="img-fluid img-responsive" src={{products.product_image1}} alt="Network Error" width="250px" height="250px" >
+                    <img class="" src={{products.productImage1}} height="250px" width="250px" alt="Network Error" >
                     <span class="status">{{products.category}}</span>
                     <div class="overlay"></div>
                   </a>
                   <div class="card-body">
                     <div class="text py-3 pb-4 px-3 text-center">
-                      <h3><a (click)="navigateToSingleProduct(products.id);" >{{products.product_name.split(" ")[0]}}</a><span *ngIf="products.product_name.split(' ')[1]!=null">....</span></h3>
+                      <h3><a (click)="navigateToSingleProduct(products.id);" style="font-weight: bold;" >{{products.productName.split(" ")[0]}}</a><span *ngIf="products.productName.split(' ')[1]!=null">....</span></h3>
                       <div class="d-flex">
                         <div class="pricing">
-                          <p class="price"><span class="mr-2 price-dc">Rs 100</span><span
-                              class="price-sale">{{products.product_price}}</span></p>
+                          <p class="price"><span class="fa">&#8377;</span><span
+                              class="price-sale">{{products.productPrice}}/kg</span></p>
                         </div>
                       </div>
                       <div class="bottom-area d-flex px-3">

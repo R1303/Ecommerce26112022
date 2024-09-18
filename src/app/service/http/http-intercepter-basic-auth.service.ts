@@ -9,7 +9,7 @@ export class HttpIntercepterBasicAuthService implements HttpInterceptor {
 
   constructor(private basicAuthService:BasicAuthenticationService) { }
 
-  intercept(req: import("@angular/common/http/http").HttpRequest<any>, next: import("@angular/common/http/http").HttpHandler): import("rxjs").Observable<import("@angular/common/http/http").HttpEvent<any>> {
+  intercept(req: import("@angular/common/http").HttpRequest<any>, next: import("@angular/common/http").HttpHandler): import("rxjs").Observable<import("@angular/common/http").HttpEvent<any>> {
     let basicAuthString= this.basicAuthService.getAuthorizedToken();
     let userName = this.basicAuthService.getAuthorizedUser();
     if(basicAuthString && userName){

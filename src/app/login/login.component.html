@@ -25,7 +25,7 @@
 <br>
 <div class="container" style="height: 500px;">
     <div class="alert alert-warning" *ngIf="invalidLogin">{{errorMsg}}</div>
-    <form action (submit)=handleJWTBasicAuthLogin() *ngIf="!doNotShowLoginForm">
+    <form action (submit)=handleLoginThroughMongoDB() *ngIf="!doNotShowLoginForm">
         <div class="container register-form">
             <div class="form">
                 <div class="no">

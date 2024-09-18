@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const API_URL =\n//'http://192.168.1.2:4300'\n'https://us-central1-mongodb-app-370902.cloudfunctions.net/app';\n//'https://ecommerce-1234.000webhostapp.com'","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

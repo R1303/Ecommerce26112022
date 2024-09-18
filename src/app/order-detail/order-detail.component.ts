@@ -36,28 +36,28 @@ export class OrderDetailComponent implements OnInit {
     var userAgent = window.navigator.userAgent;
     this.isPC = userAgent.search('Android') === -1;
     this.id = this.route.snapshot.params['id'];
-    this.service.getOrderDetailByIdPHP(this.id).subscribe(
+    this.service.getOrderDetailByOrderId(this.id).subscribe(
       response => {
              this.myOrder=response[0];
              this.fillData();
-             this.showSpinner=false;
+             //this.showSpinner=false;
       },
       error =>{
         this.showSpinner=false;
       }
     )
-   
+    this.showSpinner=false;
   }
   fillData(){
     this.quantity=this.myOrder.quantity;
     this.totalPrice=this.myOrder.total;
-    this.image1=this.myOrder.product_image1;
-    this.addressLine1=this.myOrder.address_line_1;
-    this.addressLine2=this.myOrder.address_line_2;
+    this.image1=this.myOrder.productImage1;
+    this.addressLine1=this.myOrder.line1;
+    this.addressLine2=this.myOrder.line2;
     this.city=this.myOrder.city;
     this.pincode=this.myOrder.pincode;
-    this.expectedDate=this.datepipe.transform(this.myOrder.expected_date,"dd/MM/yyyy");
-    this.productName=this.myOrder.product_name;
+    this.expectedDate=this.datepipe.transform(this.myOrder.expectedDate,"dd/MM/yyyy");
+    this.productName=this.myOrder.productName;
     if(this.myOrder.status=="confirmed"||this.myOrder.status=="Confirmed"){
       this.isConfirmed=true;
     }

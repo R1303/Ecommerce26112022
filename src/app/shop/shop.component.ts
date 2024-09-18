@@ -21,12 +21,13 @@ export class ShopComponent implements OnInit {
     private route:ActivatedRoute) { }
  
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.showSpinner=true;
     var userAgent = window.navigator.userAgent;
     this.isPC = userAgent.search('Android') === -1;
     this.category = this.route.snapshot.params['category'];
     if(this.category==null){
-    this.service.allProductonShopScreen().subscribe(
+    this.service.allProductonShopScreenMongoDB().subscribe(
       response =>{
         this.productArray=response;
         if(this.productArray.length>0){
@@ -37,7 +38,7 @@ export class ShopComponent implements OnInit {
     )
     }
     else{
-      this.service.getProductByCategoryPHP(this.category).subscribe(
+      this.service.getProductByCategoryMongoDB(this.category).subscribe(
         response=>{
           this.productArray=response;
           if(this.productArray.length>0){

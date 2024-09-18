@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoDataService } from '../service/data/todo-data.service';
+
 import { Router } from '@angular/router';
 import { Binary } from '@angular/compiler';
 export class Todo {
@@ -65,13 +65,13 @@ export class User {
 }
 export class Address {
   constructor(
-     public address_id:number,
+     public _id:number,
      public address_line_1 : string,
      public address_line_2:string,
      public city:string,
      public state:string,
      public pincode:number,
-     public userId:number,
+     public userId:string,
      public address_type:string
   ){
   }
@@ -101,6 +101,7 @@ export class Products {
   ){
   }
 }
+
 export class Cart {
   constructor(
      public id:number,
@@ -109,8 +110,8 @@ export class Cart {
      public product_price:number,
      public quantity:number,
      public total:number,
-     public fk_user:number,
-     public fk_product:number,
+     public fk_user:string,
+     public fk_product:string,
   ){
   }
 }
@@ -122,16 +123,16 @@ export class MyOrder {
      public productPrice:number,
      public quantity:number,
      public total:number,
-     public userFk:number,
-     public productFk:number,
+     public userFk:string,
+     public productFk:string,
      public line1 : string,
      public line2:string,
      public city:string,
      public state:string,
      public pincode:number,
      public status:string,
-     public orderedDate:Date,
-     public expectedDate:Date
+     public orderedDate:string,
+     public expectedDate:string
   ){
   }
 }
@@ -145,37 +146,36 @@ export class ListTodosComponent implements OnInit {
   todos : Todo[];
   users:User[];
   deleteMsg:string
-  constructor(private serviceTodos:TodoDataService,
-    private router:Router) { }
+  constructor() { }
 
   ngOnInit() {
-    this.refreshTodos();
+    //this.refreshTodos();
     }
   
 
- refreshTodos(){
-  this.serviceTodos.reteriveAllUsers('Rajan Rana').subscribe(
-    response => {
-      this.users=response;
-    }
-  );
-}
+//  refreshTodos(){
+//   this.serviceTodos.reteriveAllUsers('Rajan Rana').subscribe(
+//     response => {
+//       this.users=response;
+//     }
+//   );
+// }
 
-deleteTodos(id){
-  this.serviceTodos.deleteTodos(id).subscribe(
-    response =>{
-       this.deleteMsg=`Todo of ${id} Successfully Deleted !`
-       this.refreshTodos();
-    }
-  )
-}
+// deleteTodos(id){
+//   this.serviceTodos.deleteTodos(id).subscribe(
+//     response =>{
+//        this.deleteMsg=`Todo of ${id} Successfully Deleted !`
+//        this.refreshTodos();
+//     }
+//   )
+// }
 
-updateTodo(id){
-  this.router.navigate(['todo',id])
-}
+// updateTodo(id){
+//   this.router.navigate(['todo',id])
+// }
 
-addTodo(){
-  this.router.navigate(['todo',-1])
-}
+// addTodo(){
+//   this.router.navigate(['todo',-1])
+// }
 
 }

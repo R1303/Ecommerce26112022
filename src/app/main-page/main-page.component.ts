@@ -29,16 +29,15 @@ export class MainPageComponent implements OnInit {
     var userAgent = window.navigator.userAgent;
     this.isPC=userAgent.search('Android')===-1;
     var key=this.encryptService.testEncrypt("verifiedUser");
-    this.service.homePageDetail().subscribe(
+    this.service.homePageDetailMongoDB().subscribe(
       response=>{
         this.homePage=response[0];
         this.header_image=this.homePage.header_image;
       }
     )
-    this.service.allProductonShopScreen().subscribe(
+    this.service.allProductonShopScreenMongoDB().subscribe(
       response =>{
-        this.productArray=response;
-        console.log(this.productArray[0]);
+        this.productArray=response.slice(0,8);
         if(this.productArray.length>0 && this.header_image!=null){
            this.showSpinner=false;
         }
@@ -52,6 +51,9 @@ shopByCategory(category){
 
 navigateToSingleProduct(id){
   this.router.navigate(['singleProduct',id]);
+}
+navigateToShop(){
+  this.router.navigate(['shop']);
 }
 
 @ViewChild('videoPlayer') videoplayer: ElementRef;
@@ -92,9 +94,7 @@ __FunctionSlide() {
   this.startIndex = 0;
   alert(this.startIndex)
   const slides = Array.from(document.getElementsByClassName('mall-show-slide'));
-  if (slides === []) {
-    this.Repeat();
-  }
+ 
   for (const x of slides) {
     const y = x as HTMLElement;
     y.style.display = 'none';

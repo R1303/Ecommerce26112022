@@ -40,7 +40,8 @@
               "src/assets/js/owl.carousel.min.js",
               "src/assets/js/jquery.magnific-popup.min.js",
               "src/assets/js/aos.js",
-              "src/assets/js/jquery.animateNumber.min.js"
+              "src/assets/js/jquery.animateNumber.min.js",
+              "./node_modules/zone.js"
               
             ]
           },
@@ -98,7 +99,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/zone.js/dist/zone.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"

@@ -25,10 +25,10 @@ export class MyOrderComponent implements OnInit {
     this.isItemPresent=false;
     var userAgent = window.navigator.userAgent;
     this.isPC = this.authService.isPC();
-    this.dataService.getOrderDetailPHP(this.authService.getUserID()).subscribe(
+    this.dataService.getOrderDetailMongoDB(this.authService.getUserID()).subscribe(
       response=>{
         this.productArray=response;
-        this.productArray.sort((a, b) => new Date(b.order_date).getTime() - new Date(a.order_date).getTime());
+        this.productArray.sort((a, b) => new Date(b.orderedDate).getTime() - new Date(a.orderedDate).getTime());
         if(this.productArray.length>0){
           this.isItemPresent=true;
         }

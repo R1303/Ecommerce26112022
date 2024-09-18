@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { TodoDataService } from '../service/data/todo-data.service';
 import { Cart, Products, Address } from '../list-todos/list-todos.component';
 import { BasicAuthenticationService } from '../service/basic-authentication.service';
-import { THROW_IF_NOT_FOUND } from '@angular/core/src/di/injector';
 import { Router } from '@angular/router';
 
 @Component({
@@ -46,7 +45,7 @@ export class CartComponent implements OnInit {
     this.grossAmmount=0.0;
     var userAgent = window.navigator.userAgent;
     this.isPC = userAgent.search('Android') === -1; 
-    this.dataService.getCartDetailPHP(this.authService.getUserID()).subscribe(
+    this.dataService.getCartDetailMongoDB(this.authService.getUserID()).subscribe(
       response => {
         this.productArray = response;
         if(this.productArray.length>0){
@@ -66,7 +65,7 @@ export class CartComponent implements OnInit {
 
 
   onPageAddressLoad(){
-    this.dataService.getAddressUsingUserIDPHP(this.authService.getUserID()).subscribe(
+    this.dataService.getAddressUsingUserIDMongoDB(this.authService.getUserID()).subscribe(
       response => {
         this.addressArray = response;
         if (this.addressArray.length > 0) {
@@ -173,7 +172,7 @@ export class CartComponent implements OnInit {
   selectAddressHit(id) {
     for (var i = 0; i < this.addressArray.length; i++) {
       var address = this.addressArray[i];
-      if (address.address_id == id) {
+      if (address._id == id) {
         this.selectedAddress = address;
 
         this.line1 = this.selectedAddress.address_line_1;
@@ -182,7 +181,7 @@ export class CartComponent implements OnInit {
         this.state = this.selectedAddress.state;
         this.pincode = this.selectedAddress.pincode;
         this.selectedAddress.address_type = "default";
-        this.dataService.UpdateAddressPHP(this.authService.getUserID(), this.selectedAddress).subscribe(
+        this.dataService.UpdateAddressMongoDB(this.authService.getUserID(), this.selectedAddress).subscribe(
           response => {
             console.log("Address Updated");
             this.onPageAddressLoad();
@@ -200,7 +199,7 @@ export class CartComponent implements OnInit {
     this.showSpinner=true;
     for (var i = 0; i < this.addressArray.length; i++) {
       //this.addressArray[i].selected = false;
-      if (this.addressArray[i].address_id != selectedId) {
+      if (this.addressArray[i]._id != selectedId) {
         //this.addressArray[i].selected = false;
       }
     }
@@ -210,7 +209,7 @@ export class CartComponent implements OnInit {
 
   deleteCartItem(id){
     this.showSpinner=true;
-    this.dataService.deleteCartItemPHP(id).subscribe(
+    this.dataService.deleteCartItemMongoDB(id).subscribe(
       response=>{
         this.ngOnInit();
          //window.location.reload();          

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class ErrorComponent implements OnInit {
 
   constructor(private routerNavigate: Router) { }
-  errorMsg="An Error Occured! Please Contact Support **--**"
+  errorMsg="An Error Occured! Please Contact Support"
   ngOnInit() {
   }
 
